@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  main_db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: 'easy_wg_db'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'Barstool-Brilliant-Caucus-Trousers-Buckwheat0-Village-Harddisk'
+      MYSQL_ROOT_PASSWORD: 'Barstool-Brilliant-Caucus-Trousers-Buckwheat0-Village-Harddisk'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - main-db:/var/lib/mysql-main
+volumes:
+  main-db:
