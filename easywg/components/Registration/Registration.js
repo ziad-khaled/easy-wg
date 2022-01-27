@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
 
 class Registration extends Component {
     state={
-        email:"",
-        password:""
+        name: "",
+        email: "",
+        password: "",
+        contactNo: "",
     }
     render() {
       return (
@@ -15,7 +17,31 @@ class Registration extends Component {
             <View style={styles.inputView} >
               <TextInput  
                 style={styles.inputText}
+                placeholder="Name" 
+                placeholderTextColor="#B2ABAB"
+                justifyContent= "center"
+                onChangeText={text => this.setState({name:text})}/>
+            </View>
+            <View style={styles.inputView} >
+              <TextInput  
+                style={styles.inputText}
                 placeholder="Email" 
+                placeholderTextColor="#B2ABAB"
+                justifyContent= "center"
+                onChangeText={text => this.setState({email:text})}/>
+            </View>
+            <View style={styles.inputView} >
+              <TextInput  
+                style={styles.inputText}
+                placeholder="Password" 
+                placeholderTextColor="#B2ABAB"
+                justifyContent= "center"
+                onChangeText={text => this.setState({password:text})}/>
+            </View>
+            <View style={styles.inputView} >
+              <TextInput  
+                style={styles.inputText}
+                placeholder="Confirm Password" 
                 placeholderTextColor="#B2ABAB"
                 justifyContent= "center"
                 onChangeText={text => this.setState({email:text})}/>
@@ -24,18 +50,12 @@ class Registration extends Component {
               <TextInput  
                 secureTextEntry
                 style={styles.inputText}
-                placeholder="Password" 
+                placeholder="Contact No." 
                 placeholderTextColor="#B2ABAB"
-                onChangeText={text => this.setState({password:text})}/>
+                onChangeText={text => this.setState({contactNo:text})}/>
             </View>
-            <TouchableOpacity style={styles.loginBtn}>
-              <Text style={styles.loginText}>LOGIN</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Text style={styles.forgot}>Forgot Password?</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Text style={styles.registrationText}>New Here? Register</Text>
+            <TouchableOpacity style={styles.registrationBtn}>
+              <Text style={styles.loginText}>Create Account</Text>
             </TouchableOpacity>
           </View>
       );
@@ -75,7 +95,7 @@ const styles = StyleSheet.create({
     color:"#FFFFFF",
     fontSize: 15
   },
-  loginBtn:{
+  registrationBtn:{
     width:"35%",
     backgroundColor:"#fb5b5a",
     borderRadius:25,
