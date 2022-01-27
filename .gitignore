@@ -432,3 +432,20 @@ Temporary Items
 !.vscode/*.code-snippets
 
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,linux,git,reactnative
+
+
+# React Native .gitignore Files
+easywg/node_modules/
+easywg/.expo/
+easywg/dist/
+easywg/npm-debug.*
+easywg/*.jks
+easywg/*.p8
+easywg/*.p12
+easywg/*.key
+easywg/*.mobileprovision
+easywg/*.orig.*
+easywg/web-build/
+easywg/package-lock.json
+# macOS
+easywg/.DS_Store
