@@ -3,13 +3,15 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 //import Login from './components/Login/Login';
 import Registration from './components/Registration/Registration';
 import LoggedIn from './components/LoggedIn/LoggedIn';
+import WGJoin from './components/WGJoin/WGJoin';
 
 export default class App extends React.Component {
   render(){
     return(
       //<Login></Login>
       //<Registration></Registration>
-      <LoggedIn/>
+      //<LoggedIn/>
+      <WGJoin/>
     );
   }
 }
