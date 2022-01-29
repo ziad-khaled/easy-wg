@@ -1,19 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+//import Login from './components/Login/Login';
+import Registration from './components/Registration/Registration';
+import LoggedIn from './components/LoggedIn/LoggedIn';
+import WGJoin from './components/WGJoin/WGJoin';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default class App extends React.Component {
+  render(){
+    return(
+      //<Login></Login>
+      //<Registration></Registration>
+      //<LoggedIn/>
+      <WGJoin/>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#003f5c',
     alignItems: 'center',
     justifyContent: 'center',
   },
