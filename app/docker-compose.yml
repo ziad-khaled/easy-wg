@@ -3,5 +3,5 @@ services:
   easy_wg_backend:
     build: backend
     ports:
-      - "3000:3005"
+      - "3000:3000"
     restart: always
