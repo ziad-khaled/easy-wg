@@ -1,7 +1,7 @@
 {
-  "name": "pick-a-tutor",
+  "name": "EasyWG",
   "version": "1.0.0",
-  "description": "Pick-a-Tutor backend package",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
