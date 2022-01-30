@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize");
 
 const sequelize = new Sequelize("easy_wg_db", "db_admin", "Barstool-Brilliant-Caucus-Trousers-Buckwheat0-Village-Harddisk", {
-  host: "localhost",
+  host: "172.104.244.126",
   port: 3306,
   dialect: "mysql",
 });
