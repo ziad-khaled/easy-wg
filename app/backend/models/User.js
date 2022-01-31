@@ -33,7 +33,6 @@ User.init({
     }
 }, {
     sequelize,
-    paranoid: true, // don't truly delete records https://sequelize.org/master/manual/paranoid.html
 });
 
 

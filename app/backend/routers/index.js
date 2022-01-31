@@ -44,16 +44,11 @@ router.post('/signup', async (req, res, next) => {
     else {
         const user = await userModel.findOne({
             where: {
-                [Op.and]: [{
-                    [Op.or]: [{
-                        email: req.body.email
-                    }, {
-                        contactNumber: req.body.contactNumber
-                    }]
+                [Op.or]: [{
+                    email: req.body.email
                 }, {
-                    deletedAt: null
-                }],
-
+                    contactNumber: req.body.contactNumber
+                }]
             },
         });
 
@@ -88,7 +83,6 @@ router.get('/login', async (req, res, next) => {
     const user = await userModel.findOne({
         where: {
             email: req.body.email,
-            deletedAt: null,
         },
     });
 
