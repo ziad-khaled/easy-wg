@@ -13,7 +13,7 @@ const { Op } = require("sequelize");
     3. Create user if doesn't exist
     4. send response
  */
-router.post('/signup', async (req, res) => {
+router.post('/signup', async function(req, res) {
     var isDataMissing = false;
     var missingFields = [];
     if (!req.body.name) {
@@ -66,7 +66,7 @@ router.post('/signup', async (req, res) => {
                     password: hash,
                     contactNumber: req.body.contactNumber
                 });
-                await newuserModel.save();
+                await newUser.save();
                 console.log(`User ${req.body.name} ${req.body.email} has been created.`);
             });
 
@@ -79,7 +79,7 @@ router.post('/signup', async (req, res) => {
     }
 })
 
-router.get('/login', async (req, res) => {
+router.get('/login', async function(req, res)  {
     const user = await userModel.findOne({
         where: {
             email: req.body.email,

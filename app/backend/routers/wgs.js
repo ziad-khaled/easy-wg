@@ -10,7 +10,7 @@ const {nanoid} = require('nanoid')
     2. Check if this user has any other WGs ToDo: Check with team if a user can be admin for different WGs
     3. Save data in the database
  */
-router.post('/', async (req, res) => {
+router.post('/', function (req, res) {
     var isDataMissing = false;
     var missingFields = [];
     if (!req.headers.authorization) {
