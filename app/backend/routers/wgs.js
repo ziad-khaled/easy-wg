@@ -73,4 +73,48 @@ router.post('/', function (request, response) {
 
 });
 
+/* 
+    1. Check if the there is a valid token sent with the request
+    2. Check if wg id in the url is connected to an actual wg in the databae
+    3. Send WG data
+ */
+router.get('/:id', async function(request, response) {
+    if(!request.headers.authorization) {
+        response.json({
+            success: false,
+            message: "Missing request header authorization token."
+        });
+
+        return;
+    }
+
+    const wg = await WGModel.findOne({
+        where: {
+            id: request.params.id
+        }
+    });
+
+    if(wg === null) {
+        response.json({
+            success: false,
+            message: "The sent WG id is not connected to any records in the database."
+        });
+
+        return;
+    }
+
+    response.json({
+        sucesss: true,
+        message: "WG data found!",
+        data: {
+            id: wg.id,
+            name: wg.name,
+            code: wg.code,
+            totalRoomsNumber: wg.totalRoomsNumber,
+            Rooms: wg.rooms.map((room) => room.name),
+        }
+    });
+
+});
+
 module.exports = router;
