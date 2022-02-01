@@ -3,8 +3,8 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 var jwt = require('jsonwebtoken');
 const userModel = require("../models/User");
-const e = require("express");
-const User = require("../models/User");
+const WGModel = require("../models/WG");
+const associations = require('../models/associations')
 const { Op } = require("sequelize");
 
 /*
@@ -60,13 +60,13 @@ router.post('/signup', async (req, res, next) => {
         else {
             const saltRounds = 10;
             await bcrypt.hash(req.body.password, saltRounds).then(async (hash) => {
-                const newUser = User.build({
+                const newUser = userModel.build({
                     name: req.body.name,
                     email: req.body.email,
                     password: hash,
                     contactNumber: req.body.contactNumber
                 });
-                await newUser.save();
+                await newuserModel.save();
                 console.log(`User ${req.body.name} ${req.body.email} has been created.`);
             });
 
