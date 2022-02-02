@@ -226,14 +226,17 @@ router.get('/:code/dashboard', async function (request, response) {
         message: "WG dashboard retreieved successfully",
         data: {
             userName: user.name,
+            nextTask: wg.tasks.filter(task => task.isDone !== true)[0],
             members_spendings_summary: wg.members.map((user) => {
                 return ({
                     memberName: user.name,
-                        speding: user.speding
+                    speding: user.speding
                 });
-            })
+            }),
+            
+
         }
-    })
+        })
 
 
 })
