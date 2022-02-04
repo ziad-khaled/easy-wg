@@ -8,8 +8,8 @@ class Task extends Model { }
 Task.init({
     id: {
         type: DataTypes.INTEGER,
-        allowNull: false
-	primaryKey: true
+        allowNull: false,
+        primaryKey: true
     },
     date: {
         type: DataTypes.DATE,

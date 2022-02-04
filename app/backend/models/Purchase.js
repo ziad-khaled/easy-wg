@@ -8,14 +8,14 @@ class Purchase extends Model { }
 Purchase.init({
     Purchase_id: {
         type: DataTypes.INTEGER,
-	allowNull: false,
+        allowNull: false,
         autoIncrement: true,
         primaryKey: true
     },
     id: {
         type: DataTypes.INTEGER,
-        allowNull: false
-	primaryKey: true
+        allowNull: false,
+        primaryKey: true
     },
     product_name: {
         type: DataTypes.STRING,
