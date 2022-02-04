@@ -4,32 +4,33 @@ const {
     Model
 } = require('sequelize');
 
-class WG extends Model { }
-
-WG.init({
-    id: {
+class Purchase extends Model { }
+Purchase.init({
+    Purchase_id: {
         type: DataTypes.INTEGER,
+	allowNull: false,
         autoIncrement: true,
         primaryKey: true
     },
-    join_id: {
+    id: {
         type: DataTypes.INTEGER,
         allowNull: false
+	primaryKey: true
     },
-    name: {
+    product_name: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    totalRoomsNumber: {
-        type: DataTypes.INTEGER,
+    product_price: {
+        type: DataTypes.FLOAT,
         allowNull: false
     },
-    memberPrivileges: {
-        type: DataTypes.INTEGER,
+    receipt: {
+        type: DataTypes.BINARY,
         allowNull: true
     },
-    expenditure: {
-        type: DataTypes.FLOAT,
+    time: {
+        type: DataTypes.TIME,
         allowNull: true
     }
 
@@ -38,4 +39,4 @@ WG.init({
 });
 
 
-module.exports = WG;
+module.exports = Purchase;
