@@ -1,9 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
-//import Login from './components/Login/Login';
+import Login from './components/Login/Login';
 import Registration from './components/Registration/Registration';
 import LoggedIn from './components/LoggedIn/LoggedIn';
 import WGJoin from './components/WGJoin/WGJoin';
+import WGReg from './components/WGReg/WGReg';
+import Settlement1 from './components/Settlement1/Settlement1';
+import Settlement2 from './components/Settlement2/Settlement2';
 
 export default class App extends React.Component {
   render(){
@@ -11,7 +14,10 @@ export default class App extends React.Component {
       //<Login></Login>
       //<Registration></Registration>
       //<LoggedIn/>
-      <WGJoin/>
+      //<WGJoin/>
+      //<WGReg/>
+      //<Settlement1/>
+      <Settlement2/>
     );
   }
 }
