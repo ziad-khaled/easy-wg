@@ -5,24 +5,60 @@ import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'reac
 
 class WGRegDone extends Component {
     state = {
-        userName: "Team 1B",
-        email: "",
-        password: ""
+        wgName: "Team 1B",
+        wgTotalRoom: "",
+        wgCode: "425689"
+
     }
     render() {
         return (
             <View style={styles.container}>
                 <Image
-                    style={{ height: '25%', width: '50%', marginBottom: 15 }}
+                    style={{ height: '25%', width: '56%', marginBottom: 15 }}
                     source={require('../../assets/logo.png')}></Image>
 
-                <Text style={styles.logo}>Hello, {this.state.userName}</Text>
+                <Text style={styles.logo}>WG Name: {this.state.wgName}</Text>
+
+                <Text style={styles.logo}>Total Room No: {this.state.wgTotalRoom}</Text>
+
+                <Text style={styles.logo}>Room Numbers:  {this.state.userName}</Text>
+
+                {/* new side by side button here */}
+                <View style={{ flex: 1, flexDirection: "row", justifyContent: "flex-start" }}>
+
+                    {/* "Here i have to put space between the buttons" */}
+                    <TouchableOpacity style={styles.roomNumberBtn}>
+                        <Text style={styles.btnText}>101</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.roomNumberBtn}>
+                        <Text style={styles.btnText}>102</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.roomNumberBtn}>
+                        <Text style={styles.btnText}>103</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.roomNumberBtn}>
+                        <Text style={styles.btnText}>104</Text>
+                    </TouchableOpacity>
+
+
+
+                </View>
+
+
+
+
+
+                <Text style={styles.logo}>WG Code: {this.state.wgCode}</Text>
+
+
+
+
 
                 <TouchableOpacity style={styles.textBtn}>
-                    <Text style={styles.btnText}>Join WG</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.textBtn}>
-                    <Text style={styles.btnText}>Register New WG</Text>
+                    <Text style={styles.btnText}>Go to Dashboard</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -42,8 +78,9 @@ const styles = StyleSheet.create({
         color: "#B2ABAB",
         marginBottom: 30,
     },
+
     textBtn: {
-        width: "50%",
+        width: "35%",
         backgroundColor: "#2B2B2B",
         borderRadius: 25,
         borderColor: "#B2ABAB",
@@ -60,7 +97,21 @@ const styles = StyleSheet.create({
     registrationText: {
         color: "white",
         marginTop: 40
+    },
+    roomNumberBtn: {
+        width: "100%",
+        backgroundColor: "#2B2B2B",
+        borderRadius: 20,
+        borderColor: "#B2ABAB",
+        borderWidth: 2,
+        height: 30,
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 1,
+        marginBottom: 1,
+
     }
+
 });
 
 export default WGRegDone;
