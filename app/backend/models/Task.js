@@ -13,18 +13,14 @@ Task.init({
     },
     date: {
         type: DataTypes.DATE,
-        allowNull: true
+        allowNull: false
     },
     status: {
         type: DataTypes.TINYINT,
-        allowNull: true
+        allowNull: flase
     },
     comment: {
         type: DataTypes.STRING,
-        allowNull: true
-    },
-    time: {
-        type: DataTypes.TIME,
         allowNull: true
     }
 

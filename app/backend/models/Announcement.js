@@ -13,11 +13,7 @@ Announcement.init({
     },
     message: {
         type: DataTypes.STRING,
-        allowNull: true
-    },
-    date: {
-        type: DataTypes.DATE,
-        allowNull: true
+        allowNull: False
     }
 
 }, {
