@@ -6,33 +6,27 @@ const {
 
 class Purchase extends Model { }
 Purchase.init({
-    purchase_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true
-    },
-    status: {
-    type: Sequelize.ENUM,
-    values: ['Settled', 'Not settled'],
-    allowNull: true
-    },
-    id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true
-    },
     receiptPath: {
-        type: DataTypes.BINARY,
+        type: DataTypes.STRING,
         allowNull: false
     },
-    time: {
-        type: DataTypes.TIME,
+    date: {
+        type: DataTypes.DATE,
         allowNull: false
+    },
+    isSettled: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+    },
+    totalCost: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
     }
 
 }, {
     sequelize,
+    paranoid: true
 });
 
 

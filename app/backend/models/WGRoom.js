@@ -4,16 +4,17 @@ const {
     Model
 } = require('sequelize');
 
-class Announcement extends Model { }
-Announcement.init({
-    message: {
+class WGRoom extends Model { }
+
+WGRoom.init({
+    name: {
         type: DataTypes.STRING,
         allowNull: false
-    }
-    
-
+    },
 }, {
     sequelize,
+    paranoid: true
 });
 
-module.exports = Announcement;
+
+module.exports = WGRoom;

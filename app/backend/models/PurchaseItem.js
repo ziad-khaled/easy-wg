@@ -4,8 +4,8 @@ const {
     Model
 } = require('sequelize');
 
-class Items extends Model { }
-Items.init({
+class PurchaseItem extends Model { }
+PurchaseItem.init({
     product_name: {
         type: DataTypes.STRING,
         allowNull: false
@@ -17,7 +17,8 @@ Items.init({
 
 }, {
     sequelize,
+    paranoid: true
 });
 
 
-module.exports = Items;
+module.exports = PurchaseItem;

@@ -6,18 +6,14 @@ const {
 
 class Task extends Model { }
 Task.init({
-    id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true
-    },
     date: {
         type: DataTypes.DATE,
         allowNull: false
     },
-    status: {
-        type: DataTypes.TINYINT,
-        allowNull: flase
+    isDone: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
     },
     comment: {
         type: DataTypes.STRING,
@@ -26,6 +22,7 @@ Task.init({
 
 }, {
     sequelize,
+    paranoid: true
 });
 
 
