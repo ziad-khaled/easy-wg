@@ -24,7 +24,7 @@ class WGRegDone extends Component {
                 <Text style={styles.logo}>Room Numbers:  {this.state.userName}</Text>
 
                 {/* new side by side button here */}
-                <View style={{ flex: 1, flexDirection: "row", justifyContent: "flex-start" }}>
+                <View style={{ flex: 1, flexDirection: "row", justifyContent: "space-around", height: 10 }}>
 
                     {/* "Here i have to put space between the buttons" */}
                     <TouchableOpacity style={styles.roomNumberBtn}>
@@ -43,19 +43,9 @@ class WGRegDone extends Component {
                         <Text style={styles.btnText}>104</Text>
                     </TouchableOpacity>
 
-
-
                 </View>
 
-
-
-
-
                 <Text style={styles.logo}>WG Code: {this.state.wgCode}</Text>
-
-
-
-
 
                 <TouchableOpacity style={styles.textBtn}>
                     <Text style={styles.btnText}>Go to Dashboard</Text>
@@ -99,16 +89,17 @@ const styles = StyleSheet.create({
         marginTop: 40
     },
     roomNumberBtn: {
-        width: "100%",
+        width: "15%",
         backgroundColor: "#2B2B2B",
         borderRadius: 20,
         borderColor: "#B2ABAB",
         borderWidth: 2,
         height: 30,
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "space-around",
         marginTop: 1,
         marginBottom: 1,
+        marginRight: 10,
 
     }
 
