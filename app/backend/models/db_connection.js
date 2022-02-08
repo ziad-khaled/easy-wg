@@ -11,7 +11,7 @@ const connectToDB = async () => {
   console.log('Connection has been established successfully.');
 
   // check the current the state of the database tables and alter the tables accordingly, see the model synchronization section in https://sequelize.org/master/manual/model-basics.html
-  await sequelize.sync({ alter: true});
+  await sequelize.sync({ drop: true});
   console.log("All models were synchronized successfully.");
 }
 

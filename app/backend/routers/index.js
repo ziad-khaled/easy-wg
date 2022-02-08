@@ -3,8 +3,8 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 var jwt = require('jsonwebtoken');
 const userModel = require("../models/User");
-const e = require("express");
-const User = require("../models/User");
+const WGModel = require("../models/WG");
+const associations = require('../models/associations')
 const { Op } = require("sequelize");
 
 /*
@@ -13,82 +13,76 @@ const { Op } = require("sequelize");
     3. Create user if doesn't exist
     4. send response
  */
-router.post('/signup', async (req, res, next) => {
+router.post('/signup', async function(request, response) {
     var isDataMissing = false;
     var missingFields = [];
-    if (!req.body.name) {
+    if (!request.body.name) {
         isDataMissing = true;
         missingFields.push('name');
     }
 
-    if (!req.body.email) {
+    if (!request.body.email) {
         isDataMissing = true;
         missingFields.push('email');
     }
 
-    if (!req.body.password) {
+    if (!request.body.password) {
         isDataMissing = true;
         missingFields.push('password');
     }
 
-    if (!req.body.contactNumber) {
+    if (!request.body.contactNumber) {
         isDataMissing = true;
         missingFields.push('contactNumber');
     }
 
     if (isDataMissing)
-        res.json({
+        response.json({
             success: false,
             message: "Can't create account, missing data " + missingFields.join(', '),
         });
     else {
         const user = await userModel.findOne({
             where: {
-                [Op.and]: [{
-                    [Op.or]: [{
-                        email: req.body.email
-                    }, {
-                        contactNumber: req.body.contactNumber
-                    }]
+                [Op.or]: [{
+                    email: request.body.email
                 }, {
-                    deletedAt: null
-                }],
-
+                    contactNumber: request.body.contactNumber
+                }]
             },
         });
 
         if (user)
-            res.json({
+            response.json({
                 success: false,
                 message: "A user has already signed up using this email or contact number.",
             });
         else {
             const saltRounds = 10;
-            await bcrypt.hash(req.body.password, saltRounds).then(async (hash) => {
-                const newUser = User.build({
-                    name: req.body.name,
-                    email: req.body.email,
+            await bcrypt.hash(request.body.password, saltRounds).then(async (hash) => {
+                const newUser = userModel.build({
+                    name: request.body.name,
+                    email: request.body.email,
                     password: hash,
-                    contactNumber: req.body.contactNumber
+                    contactNumber: request.body.contactNumber
                 });
                 await newUser.save();
-                console.log(`User ${req.body.name} ${req.body.email} has been created.`);
+                console.log(`User ${request.body.name} ${request.body.email} has been created.`);
             });
 
 
-            res.json({
+            response.json({
                 success: true,
-                message: "Account created successfully, " + req.body.name,
+                message: "Account created successfully, " + request.body.name,
             });
         }
     }
 })
 
-router.get('/login', async (req, res, next) => {
+router.get('/login', async function(request, response)  {
     const user = await userModel.findOne({
         where: {
-            email: req.body.email,
-            deletedAt: null,
+            email: request.body.email,
         },
     });
 
@@ -98,7 +92,7 @@ router.get('/login', async (req, res, next) => {
             id: user.id,
             email: user.email,
         };
-        const plainTextPassword = req.body.password;
+        const plainTextPassword = request.body.password;
 
         const isPasswordCorrect = await bcrypt.compare(
             plainTextPassword,
@@ -109,7 +103,7 @@ router.get('/login', async (req, res, next) => {
             const secret = "VERY TOP SECRET!!!";
             const jwtToken = jwt.sign(payload, secret);
 
-            res.json({
+            response.json({
                 success: true,
                 message: "User logged in successfully!",
                 data: {
@@ -119,7 +113,7 @@ router.get('/login', async (req, res, next) => {
         }
 
     } else
-        res.json({
+        response.json({
             success: false,
             message: "Wrong credentials, please check your email or password.",
         });

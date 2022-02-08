@@ -4,31 +4,25 @@ const {
     Model
 } = require('sequelize');
 
-class User extends Model {}
+class WG extends Model { }
 
-User.init({
+WG.init({
     name: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    email: {
+    code: {
         type: DataTypes.STRING,
-        allowNull: false,
         
     },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false,
+    totalRoomsNumber: {
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
-    contactNumber: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        
-    }
 }, {
     sequelize,
     paranoid: true
 });
 
 
-module.exports = User
+module.exports = WG;
