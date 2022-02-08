@@ -9,16 +9,20 @@ import Settlement1 from './components/Settlement1/Settlement1';
 import Settlement2 from './components/Settlement2/Settlement2';
 import Flex from './components/FlexTest/Flex';
 import NewAnnoucement from './components/NewAnnouncement/NewAnnoucement';
+import WGRegDone from './components/WGRegDone/WGRegDone';
 
 export default class App extends React.Component {
   render() {
     return (
       //<Login />
-      <Registration/>
+      //<Registration/>
       //<LoggedIn/>
       //<WGJoin/>
+      //<WGRegDone/>
+
       //<WGReg/>
-      //<Settlement1/>
+      
+      <Settlement1/>
       //<Settlement2/>
       //<Flex/>
       //<NewAnnoucement></NewAnnoucement>
