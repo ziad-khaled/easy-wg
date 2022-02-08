@@ -253,7 +253,7 @@ router.get('/:id/dashboard', async function (request, response) {
             userName: user.name,
             wg: wg,
             nextTask: nextTask,
-            members_spendings_summary: membersSpendings, 
+            membersSpendingsSummary: membersSpendings, 
         }
     })
 
