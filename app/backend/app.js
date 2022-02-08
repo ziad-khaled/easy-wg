@@ -3,6 +3,7 @@ const express = require('express');
 const sequelize = require('./models/db_connection');
 const logger = require('morgan');
 const index_router = require('./routers/index');
+const wgs_router = require('./routers/wgs');
 const port = 3000;
 
 const app = express();
@@ -37,6 +38,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api', index_router);
+app.use('/api/wgs', wgs_router);
 
 
 
