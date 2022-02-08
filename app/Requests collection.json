@@ -1,1 +1,329 @@
-{"_type":"export","__export_format":4,"__export_date":"2022-01-30T16:56:11.053Z","__export_source":"insomnia.desktop.app:v2021.7.2","resources":[{"_id":"req_a039f9cb369342358202b55cf292ab5e","parentId":"fld_37384b2c1795410094539ef49070af9b","modified":1643561675096,"created":1643538503510,"url":"http://{{ _.server_address }}:{{ _.app_port }}/api/signup","name":"signup","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"name\" : \"Ziad Khaled\",\n\t\"password\": \"password\",\n\t\"email\" : \"ziad@easywg.com\",\n\t\"contactNumber\" : \"01245453434\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json","id":"pair_e7f729d619f14b07a4f2033c46d8bfb4"}],"authentication":{},"metaSortKey":-1643538503510,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_37384b2c1795410094539ef49070af9b","parentId":"wrk_e53f45bcede0456cb1ad578063e86805","modified":1643538472258,"created":1643538472258,"name":"Registration View","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1643538472258,"_type":"request_group"},{"_id":"wrk_e53f45bcede0456cb1ad578063e86805","parentId":null,"modified":1643535770322,"created":1643535770322,"name":"Requests collection","description":"","scope":"collection","_type":"workspace"},{"_id":"req_3b6d81711a994d9c9740e31399451db4","parentId":"fld_e3753c7d3ddd48f79a4e393b3ba93f26","modified":1643536084147,"created":1643535933032,"url":"http://{{ _.server_address }}:{{ _.app_port }}/api/login","name":"login","description":"","method":"GET","body":{"mimeType":"application/json","text":"{\n\t\"email\" : \"ziad@easywg.com\",\n\t\"password\" : \"password\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json","id":"pair_cc2042072156468bb42a36dfdc92fc86"},{"id":"pair_4c38fae844c14f459a7f54a7ebdb3878","name":"","value":"","description":""}],"authentication":{},"metaSortKey":-1643535933032,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_e3753c7d3ddd48f79a4e393b3ba93f26","parentId":"wrk_e53f45bcede0456cb1ad578063e86805","modified":1643535924970,"created":1643535924970,"name":"Landing View","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1643535924970,"_type":"request_group"},{"_id":"env_a98c627925204ef031a93fc0674a42c91f5180a8","parentId":"wrk_e53f45bcede0456cb1ad578063e86805","modified":1643535781928,"created":1643535770329,"name":"Base Environment","data":{},"dataPropertyOrder":{},"color":null,"isPrivate":false,"metaSortKey":1643535770329,"_type":"environment"},{"_id":"jar_a98c627925204ef031a93fc0674a42c91f5180a8","parentId":"wrk_e53f45bcede0456cb1ad578063e86805","modified":1643535770332,"created":1643535770332,"name":"Default Jar","cookies":[],"_type":"cookie_jar"},{"_id":"spc_a4e823649bbd4cadbf5a029cde824f16","parentId":"wrk_e53f45bcede0456cb1ad578063e86805","modified":1643535770325,"created":1643535770325,"fileName":"Requests collection","contents":"","contentType":"yaml","_type":"api_spec"},{"_id":"env_7e924fb345e045b486031d3217542caa","parentId":"env_a98c627925204ef031a93fc0674a42c91f5180a8","modified":1643561630639,"created":1643535790084,"name":"EasyWG","data":{"server_address":"172.104.244.126","app_port":"3000"},"dataPropertyOrder":{"&":["server_address","app_port"]},"color":null,"isPrivate":false,"metaSortKey":1643535790084,"_type":"environment"}]}
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2022-02-08T18:56:52.657Z",
+    "__export_source": "insomnia.desktop.app:v2021.7.2",
+    "resources": [{
+        "_id": "req_3b6d81711a994d9c9740e31399451db4",
+        "parentId": "fld_e3753c7d3ddd48f79a4e393b3ba93f26",
+        "modified": 1644346316547,
+        "created": 1643535933032,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/login",
+        "name": "login",
+        "description": "",
+        "method": "GET",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"email\" : \"ziad@easywg.com\",\n\t\"password\" : \"password\"\n}"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_cc2042072156468bb42a36dfdc92fc86"
+        }, {
+            "id": "pair_4c38fae844c14f459a7f54a7ebdb3878",
+            "name": "",
+            "value": "",
+            "description": ""
+        }],
+        "authentication": {},
+        "metaSortKey": -1643535933032,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_e3753c7d3ddd48f79a4e393b3ba93f26",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644174281965,
+        "created": 1643535924970,
+        "name": "Landing View",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270494,
+        "_type": "request_group"
+    }, {
+        "_id": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "parentId": null,
+        "modified": 1643535770322,
+        "created": 1643535770322,
+        "name": "Requests collection",
+        "description": "",
+        "scope": "collection",
+        "_type": "workspace"
+    }, {
+        "_id": "req_a039f9cb369342358202b55cf292ab5e",
+        "parentId": "fld_37384b2c1795410094539ef49070af9b",
+        "modified": 1644339554227,
+        "created": 1643538503510,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/signup",
+        "name": "signup",
+        "description": "",
+        "method": "POST",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"name\" : \"Ziad Khaled\",\n\t\"password\": \"password\",\n\t\"email\" : \"ziad@easywg.com\",\n\t\"contactNumber\" : \"1\"\n}"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_e7f729d619f14b07a4f2033c46d8bfb4"
+        }],
+        "authentication": {},
+        "metaSortKey": -1643538503510,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_37384b2c1795410094539ef49070af9b",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644174285909,
+        "created": 1643538472258,
+        "name": "Registration View",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270469,
+        "_type": "request_group"
+    }, {
+        "_id": "req_a9a4ffcc95ec459eac9a0a37172f0563",
+        "parentId": "fld_1ac961ca47084df89bbcb0ebe029a73d",
+        "modified": 1644346606375,
+        "created": 1644175837374,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/wgs",
+        "name": "Register WG",
+        "description": "",
+        "method": "POST",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"name\": \"TEAM 1 NEW WG\",\n\t\"totalRoomsNumber\" : 2,\n\t\"rooms\" : [\"1\", \"2\"]\n}\t"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_3328fae1cd6448bd84faf8bd8cb8791e"
+        }, {
+            "id": "pair_9f2ad8191ac3468f9a77f8a34bac71d6",
+            "name": "",
+            "value": "",
+            "description": ""
+        }],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.ziad_token }}"
+        },
+        "metaSortKey": -1644174270394,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_1ac961ca47084df89bbcb0ebe029a73d",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644259401578,
+        "created": 1644174270444,
+        "name": "WG Registration View",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270462.75,
+        "_type": "request_group"
+    }, {
+        "_id": "req_7d533f946d794008a78d0eaf0d2f7992",
+        "parentId": "fld_5f56c19f1b8349d0a30710af3448c3f5",
+        "modified": 1644343199842,
+        "created": 1644197381359,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/wgs/6",
+        "name": "Get WG info",
+        "description": "",
+        "method": "GET",
+        "body": {},
+        "parameters": [],
+        "headers": [],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644197381359,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_5f56c19f1b8349d0a30710af3448c3f5",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644259391695,
+        "created": 1644197350909,
+        "name": "WG Registration Done View",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270456.5,
+        "_type": "request_group"
+    }, {
+        "_id": "req_0d3a85f6732140e6aabaecf15866a8ea",
+        "parentId": "fld_ca7bbd5221734d3a9f7b638ba65b138e",
+        "modified": 1644343543831,
+        "created": 1644259427824,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/wgs/join",
+        "name": "join",
+        "description": "",
+        "method": "POST",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"code\": \"Dqjtsocnfxwk\"\n}"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_0cd8f50c5d614f08b5f935662365b77b"
+        }],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644259427825,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_ca7bbd5221734d3a9f7b638ba65b138e",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644343590546,
+        "created": 1644259351531,
+        "name": "WG join",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270454.9375,
+        "_type": "request_group"
+    }, {
+        "_id": "req_595ccd22bb0d4e10bc4905b15af751be",
+        "parentId": "fld_6a98d1d06e79443a97cd1a2868b4f9b7",
+        "modified": 1644343750609,
+        "created": 1644265683448,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/wgs/1/dashboard",
+        "name": "Get WG dashboard ",
+        "description": "",
+        "method": "GET",
+        "body": {},
+        "parameters": [],
+        "headers": [],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644265683449,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_6a98d1d06e79443a97cd1a2868b4f9b7",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644343586826,
+        "created": 1644265664486,
+        "name": "WG dashboard ",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270453.375,
+        "_type": "request_group"
+    }, {
+        "_id": "env_a98c627925204ef031a93fc0674a42c91f5180a8",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1643535781928,
+        "created": 1643535770329,
+        "name": "Base Environment",
+        "data": {},
+        "dataPropertyOrder": {},
+        "color": null,
+        "isPrivate": false,
+        "metaSortKey": 1643535770329,
+        "_type": "environment"
+    }, {
+        "_id": "jar_a98c627925204ef031a93fc0674a42c91f5180a8",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1643535770332,
+        "created": 1643535770332,
+        "name": "Default Jar",
+        "cookies": [],
+        "_type": "cookie_jar"
+    }, {
+        "_id": "spc_a4e823649bbd4cadbf5a029cde824f16",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1643535770325,
+        "created": 1643535770325,
+        "fileName": "Requests collection",
+        "contents": "",
+        "contentType": "yaml",
+        "_type": "api_spec"
+    }, {
+        "_id": "env_7e924fb345e045b486031d3217542caa",
+        "parentId": "env_a98c627925204ef031a93fc0674a42c91f5180a8",
+        "modified": 1644346312769,
+        "created": 1643535790084,
+        "name": "EasyWG",
+        "data": {
+            "server_address": "172.104.244.126",
+            "app_port": "3000",
+            "ziad_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ6aWFkQGVhc3l3Zy5jb20iLCJpYXQiOjE2NDQzNDYyODZ9.-xPqIJAPJsrPJg1Ur3drwrWts_UPCvI3vZY7l567odg"
+        },
+        "dataPropertyOrder": {
+            "&": ["server_address", "app_port", "ziad_token"]
+        },
+        "color": null,
+        "isPrivate": false,
+        "metaSortKey": 1643535790084,
+        "_type": "environment"
+    }, {
+        "_id": "env_a07f7ebe980d4691ac314f928c2a2bd3",
+        "parentId": "env_a98c627925204ef031a93fc0674a42c91f5180a8",
+        "modified": 1644259552344,
+        "created": 1643648082939,
+        "name": "Local EasyWG",
+        "data": {
+            "server_address": "localhost",
+            "app_port": "3000",
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ6aWFkQGVhc3l3Zy5jb20iLCJpYXQiOjE2NDQyNTk1NDB9.f8Ano51LQbUUBvvNvUEJfQ42mDNokME53OZhXCta-6w"
+        },
+        "dataPropertyOrder": {
+            "&": ["server_address", "app_port", "token"]
+        },
+        "color": null,
+        "isPrivate": false,
+        "metaSortKey": 1643648082939,
+        "_type": "environment"
+    }]
+}
