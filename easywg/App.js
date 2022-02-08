@@ -5,6 +5,7 @@ import Registration from './components/Registration/Registration';
 import LoggedIn from './components/LoggedIn/LoggedIn';
 import WGJoin from './components/WGJoin/WGJoin';
 import WGRegDone from './components/WGRegDone/WGRegDone';
+import NewAnnoucement from './components/NewAnnouncement/NewAnnoucement'
 
 export default class App extends React.Component {
   render() {
@@ -13,7 +14,8 @@ export default class App extends React.Component {
       //<Registration></Registration>
       //<LoggedIn/>
       // <WGJoin/>
-      <WGRegDone />
+      // <WGRegDone />
+      <NewAnnoucement />
     );
   }
 }
