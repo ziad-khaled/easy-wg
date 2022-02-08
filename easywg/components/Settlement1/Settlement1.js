@@ -19,6 +19,8 @@ class Settlement1 extends Component {
                     style={styles.inputText}
                     onChangeText={text => this.setState({password:text})}/>
                 </View>
+
+                
                 <TouchableOpacity style={styles.textBtn}>
                     <Text style={styles.btnText}>Settle Now</Text>
                 </TouchableOpacity>

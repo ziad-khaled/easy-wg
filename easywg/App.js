@@ -7,17 +7,19 @@ import WGJoin from './components/WGJoin/WGJoin';
 import WGReg from './components/WGReg/WGReg';
 import Settlement1 from './components/Settlement1/Settlement1';
 import Settlement2 from './components/Settlement2/Settlement2';
+import Flex from './components/FlexTest/Flex';
 
 export default class App extends React.Component {
   render(){
     return(
-      //<Login></Login>
+      <Login/>
       //<Registration></Registration>
       //<LoggedIn/>
       //<WGJoin/>
       //<WGReg/>
       //<Settlement1/>
-      <Settlement2/>
+      //<Settlement2/>
+      //<Flex/>
     );
   }
 }

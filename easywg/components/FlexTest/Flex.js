@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, Dimensions 
 var deviceWidth = Dimensions.get('window').width; //full width
 var deviceHeight = Dimensions.get('window').height; //full height
 
-class Login extends Component {
+class Flex extends Component {
     state={
         email:"",
         password:""
@@ -122,4 +122,4 @@ const styles = StyleSheet.create({
     }
   });
 
-export default Login;
+export default Flex;
