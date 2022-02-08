@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
         color: "white",
         marginTop: 15,
         fontSize: 25,
-        fontWeight: "10"
+        fontWeight: "300"
     },
 
     headerText: {

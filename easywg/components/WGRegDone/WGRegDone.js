@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         marginTop: 1,
         marginBottom: 1,
-        marginRight: 10,
+        marginRight: 10
 
     }
 
