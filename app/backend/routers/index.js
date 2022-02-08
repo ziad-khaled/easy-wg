@@ -79,7 +79,7 @@ router.post('/signup', async function(request, response) {
     }
 })
 
-router.get('/login', async function(request, response)  {
+router.post('/login', async function(request, response)  {
     const user = await userModel.findOne({
         where: {
             email: request.body.email,
