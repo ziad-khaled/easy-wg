@@ -25,13 +25,17 @@ class WGReg extends Component {
               style={styles.inputText}
               onChangeText={text => this.setState({ password: text })} />
           </View>
-          <TouchableOpacity style={styles.textBtn}>
-            <Text style={styles.btnText}>Join</Text>
-          </TouchableOpacity>
+          
         </View>
 
         <View style={styles.footer}>
-
+          <TouchableOpacity 
+              style={styles.textBtn}
+              onPress={()=>{
+                this.props.navigation.navigate('WGRegDone')
+              }}>
+              <Text style={styles.btnText}>Create WG</Text>
+            </TouchableOpacity>
         </View>
       </View>
     );

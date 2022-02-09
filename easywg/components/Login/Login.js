@@ -37,7 +37,11 @@ class Login extends Component {
               onChangeText={text => this.setState({ password: text })} />
           </View>
 
-          <TouchableOpacity style={styles.loginBtn}>
+          <TouchableOpacity 
+            style={styles.loginBtn}
+            onPress={()=>{
+              this.props.navigation.navigate('LoggedIn')
+            }}>
             <Text style={styles.loginText}>LOGIN</Text>
           </TouchableOpacity>
           <TouchableOpacity>
@@ -46,7 +50,10 @@ class Login extends Component {
         </View>
 
         <View style={styles.footer}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={()=>{
+              this.props.navigation.navigate('Registration')
+            }}>
             <Text style={styles.registrationText}>New Here? Register</Text>
           </TouchableOpacity>
         </View>

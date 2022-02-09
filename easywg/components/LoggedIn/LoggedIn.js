@@ -21,10 +21,18 @@ class LoggedIn extends Component {
         <View style={styles.midContent}>
           <Text style={styles.userTitle}>Hello, {this.state.userName}</Text>
 
-          <TouchableOpacity style={styles.textBtn}>
+          <TouchableOpacity 
+            style={styles.textBtn}            
+            onPress={()=>{
+              this.props.navigation.navigate('WGJoin')
+            }}>
             <Text style={styles.btnText}>Join WG</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.textBtn}>
+          <TouchableOpacity 
+            style={styles.textBtn}
+            onPress={()=>{
+              this.props.navigation.navigate('WGReg')
+            }}>
             <Text style={styles.btnText}>Register New WG</Text>
           </TouchableOpacity>
         </View>

@@ -61,7 +61,11 @@ class Registration extends Component {
               placeholderTextColor="#B2ABAB"
               onChangeText={text => this.setState({ contactNo: text })} />
           </View>
-          <TouchableOpacity style={styles.registrationBtn}>
+          <TouchableOpacity 
+            style={styles.registrationBtn}
+            onPress={()=>{
+              this.props.navigation.navigate('LoggedIn')
+            }}>
             <Text style={styles.loginText}>Create Account</Text>
           </TouchableOpacity>
           </View>

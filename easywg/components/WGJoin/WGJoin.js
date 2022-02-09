@@ -28,7 +28,11 @@ class WGJoin extends Component {
                 style={styles.inputText}
                 onChangeText={text => this.setState({ password: text })} />
             </View>
-            <TouchableOpacity style={styles.textBtn}>
+            <TouchableOpacity 
+              style={styles.textBtn}
+              onPress={()=>{
+                this.props.navigation.navigate('Dashboard')
+            }}>
               <Text style={styles.btnText}>Join</Text>
             </TouchableOpacity>
           </View>

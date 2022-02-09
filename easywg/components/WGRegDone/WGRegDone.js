@@ -41,7 +41,11 @@ class WGRegDone extends Component {
 
                     <Text style={styles.textStyle}>WG Code: {this.state.wgCode}</Text>
 
-                    <TouchableOpacity style={styles.dashBoardBtn}>
+                    <TouchableOpacity 
+                        style={styles.dashBoardBtn}
+                        onPress={()=>{
+                            this.props.navigation.navigate('Dashboard')
+                        }}>
                         <Text style={styles.btnText}>Go to Dashboard</Text>
                     </TouchableOpacity>
                 </View>

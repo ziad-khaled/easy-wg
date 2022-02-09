@@ -1,11 +1,8 @@
-
-
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 
 var deviceWidth = Dimensions.get('window').width; //full width
 var deviceHeight = Dimensions.get('window').height; //full height
-
 
 class AddExpense extends Component {
     state = {
@@ -17,66 +14,54 @@ class AddExpense extends Component {
             <View style={styles.container}>
 
                 <View style={styles.header}>
-                    <Text style={styles.logo}>Hello, {this.state.wgName}</Text>
+                    
                 </View>
 
                 <View style={styles.midContent}>
-
-                    <View style={styles.dateDesign}>
-
-                        <Text style={styles.logo}>Date</Text>
-
-                        <TextInput
-                            style={styles.input}
-                            multiline
-                        // onChangeText={onChangeText}
-                        // value={text}
-                        />
+                    <View style={styles.midContentChild1}>
+                        <Text style={styles.title}>Hello, {this.state.wgName}</Text>
                     </View>
+                    <View style={styles.midContentChild2}>
+                        <View style={styles.dateDesign}>
+                            <Text style={styles.logo}>Date</Text>
 
-                    <View style={styles.dateDesign}>
-                        <Text style={styles.logo}>Product Name</Text>
+                            <TextInput
+                                style={styles.input}
+                                multiline
+                            // onChangeText={onChangeText}
+                            // value={text}
+                            />
+                        </View>
 
-                        <TextInput
-                            style={styles.input}
-                            multiline
-                        // onChangeText={onChangeText}
-                        // value={text}
-                        />
+                        <View style={styles.dateDesign}>
+                            <Text style={styles.logo}>Product Name</Text>
+
+                            <TextInput
+                                style={styles.input}
+                            />
+                        </View>
+
+                        <View style={styles.dateDesign}>
+                            <Text style={styles.logo}>Price</Text>
+
+                            <TextInput
+                                style={styles.input}
+                            />
+                        </View>
+
+                        <View style={styles.dateDesign}>
+                            <Text style={styles.logo}>Note</Text>
+
+                            <TextInput
+                                style={styles.input}
+                            />
+                        </View>
                     </View>
-
-                    <View style={styles.dateDesign}>
-                        <Text style={styles.logo}>Price</Text>
-
-                        <TextInput
-                            style={styles.input}
-                            multiline
-                        // onChangeText={onChangeText}
-                        // value={text}
-                        />
-                    </View>
-
-                    <View style={styles.dateDesign}>
-                        <Text style={styles.logo}>Note</Text>
-
-                        <TextInput
-                            style={styles.input}
-                            multiline
-                        // onChangeText={onChangeText}
-                        // value={text}
-                        />
-                    </View>
-
-                    <View>
+                    <View style={styles.midContentChild3}>
                         <TouchableOpacity style={styles.textBtn}>
                             <Text style={styles.btnText}>Upload Receipt</Text>
                         </TouchableOpacity>
-
                     </View>
-
-
-
-
                 </View>
 
                 <View style={styles.footer}>
@@ -106,28 +91,60 @@ const styles = StyleSheet.create({
 
 
     },
-    logo: {
+    title: {
         fontWeight: "bold",
         fontSize: 30,
         color: "#B2ABAB",
         marginBottom: 30,
         // alignItems: "start"
     },
+    logo: {
+        fontWeight: "normal",
+        fontSize: 20,
+        color: "#B2ABAB",
+        //marginBottom: 30,
+        // alignItems: "start"
+    },
     midContent: {
-        flex: 6,
+        flex:6,
         flexDirection: 'column',
-
         // justifyContent: "center",
         // alignItems: "center",
         width: deviceWidth,
         direction: 'ltr',
-        marginLeft: 50
+    },
+    midContentChild1: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: "center",
+        width: deviceWidth,
+        direction: 'ltr',
+        paddingLeft: 30
+    },
+    midContentChild2: {
+        flex: 2,
+        flexDirection: 'column',
+        justifyContent: "center",
+        // alignItems: "center",
+        width: deviceWidth,
+        direction: 'ltr',
+    },
+    midContentChild3: {
+        flex: 1,
+        flexDirection: 'column',
+
+        // justifyContent: "center",
+        alignItems: "center",
+        width: deviceWidth,
+        direction: 'ltr',
     },
     dateDesign: {
         flex: 1,
         flexDirection: "row",
         justifyContent: 'space-around',
-        width: deviceWidth
+        width: deviceWidth,
+        //justifyContent: 'center',
+        alignItems: 'center'
     },
     uploadReceiptDesigh: {
         flex: 1,
@@ -196,7 +213,7 @@ const styles = StyleSheet.create({
         color: "white",
     },
     footer: {
-        flex: 1.5,
+        flex: 3,
         flexDirection: 'row',
         justifyContent: "space-around",
         // marginRight: 10,
