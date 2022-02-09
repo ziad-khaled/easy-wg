@@ -16,40 +16,40 @@ class WGRegDone extends Component {
     render() {
         return (
             <View style={styles.container}>
-            <Image 
+                <Image
                     style={styles.logo}
                     source={require('../../assets/logo.png')}>
-            </Image>
-  
-  
-            <View style={styles.midContent}>
-                <Text style={styles.textStyle}>WG Name: {this.state.wgName}</Text>
+                </Image>
 
-                <Text style={styles.textStyle}>Total Room No: {this.state.wgTotalRoom}</Text>
 
-                <Text style={styles.textStyle}>Room Numbers:  {this.state.userName}</Text>
+                <View style={styles.midContent}>
+                    <Text style={styles.textStyle}>WG Name: {this.state.wgName}</Text>
 
-                <View style={styles.roomNumberList}>
-                    <Text style={styles.roomNumberTxt}>101</Text>
+                    <Text style={styles.textStyle}>Total Room No: {this.state.wgTotalRoom}</Text>
 
-                    <Text style={styles.roomNumberTxt}>102</Text>
+                    <Text style={styles.textStyle}>Room Numbers:  {this.state.userName}</Text>
 
-                    <Text style={styles.roomNumberTxt}>103</Text>
+                    <View style={styles.roomNumberList}>
+                        <Text style={styles.roomNumberTxt}>101</Text>
 
-                    <Text style={styles.roomNumberTxt}>104</Text> 
+                        <Text style={styles.roomNumberTxt}>102</Text>
+
+                        <Text style={styles.roomNumberTxt}>103</Text>
+
+                        <Text style={styles.roomNumberTxt}>104</Text>
+                    </View>
+
+                    <Text style={styles.textStyle}>WG Code: {this.state.wgCode}</Text>
+
+                    <TouchableOpacity style={styles.dashBoardBtn}>
+                        <Text style={styles.btnText}>Go to Dashboard</Text>
+                    </TouchableOpacity>
                 </View>
 
-                <Text style={styles.textStyle}>WG Code: {this.state.wgCode}</Text>
+                <View style={styles.footer}>
 
-                <TouchableOpacity style={styles.dashBoardBtn}>
-                    <Text style={styles.btnText}>Go to Dashboard</Text>
-                </TouchableOpacity>
+                </View>
             </View>
-  
-            <View style={styles.footer}>
-                
-            </View>                
-        </View>
         );
     }
 }
@@ -62,26 +62,26 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    logo:{
+    logo: {
         flex: 2.5,
         width: '75%',
     },
-    midContent:{
+    midContent: {
         flex: 4,
         flexDirection: 'column',
-        justifyContent:"center",
-        alignItems:"center",
+        justifyContent: "center",
+        alignItems: "center",
         width: deviceWidth,
-    }, 
+    },
     textStyle: {
-        color:"#B2ABAB", 
+        color: "#B2ABAB",
         fontSize: 20,
-        marginBottom: 30, 
+        marginBottom: 30,
     },
     roomNumberList: {
-        flex: 1, 
-        flexDirection: "row", 
-        justifyContent: "space-around", 
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "space-around",
         height: 10
     },
     roomNumberTxt: {
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
         height: 35,
         alignItems: "center",
         padding: 8,
-        margin:5
+        margin: 5
     },
     dashBoardBtn: {
         width: "35%",
@@ -104,14 +104,13 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginTop: 15,
         marginBottom: 10
-    }, 
-    btnText:{
-        color:"white",    
-    }, 
-    footer:{
+    },
+    btnText: {
+        color: "white",
+    },
+    footer: {
         flex: 1,
     },
-<<<<<<< HEAD
     btnText: {
         color: "#B2ABAB",
     },
@@ -135,8 +134,5 @@ const styles = StyleSheet.create({
     }
 
 });
-=======
-  });
->>>>>>> 6c5f4c0d859f74cd7898bdbab1a80399847c122d
 
 export default WGRegDone;

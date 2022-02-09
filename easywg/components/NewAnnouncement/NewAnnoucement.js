@@ -1,8 +1,10 @@
 
 
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, Dimensions } from 'react-native';
 
+var deviceWidth = Dimensions.get('window').width; //full width
+var deviceHeight = Dimensions.get('window').height; //full height
 class NewAnnoucement extends Component {
     state = {
         wgName: "Team 1B",
@@ -12,8 +14,11 @@ class NewAnnoucement extends Component {
     }
     render() {
         return (
-            <View style={styles.container}> 
-  
+            <View style={styles.container}>
+                <View style={styles.header}>
+
+                </View>
+
                 <View style={styles.midContent}>
                     <Text style={styles.logo}>Hello, {this.state.wgName}</Text>
 
@@ -30,10 +35,10 @@ class NewAnnoucement extends Component {
                         <Text style={styles.btnText}>Publish</Text>
                     </TouchableOpacity>
                 </View>
-    
+
                 <View style={styles.footer}>
-                    
-                </View>                
+
+                </View>
             </View>
         );
     }
@@ -46,12 +51,25 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    header: {
+        flex: 1
+    },
     logo: {
         fontWeight: "bold",
         fontSize: 30,
         color: "#B2ABAB",
         marginBottom: 30,
         // alignItems: "start"
+    },
+    midContent: {
+        flex: 6,
+        flexDirection: 'column',
+
+        // justifyContent: "center",
+        // alignItems: "center",
+        width: deviceWidth,
+        direction: 'ltr',
+        marginLeft: 50
     },
 
     textBtn: {

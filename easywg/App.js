@@ -12,22 +12,24 @@ import NewAnnoucement from './components/NewAnnouncement/NewAnnoucement';
 import CleaningTask from './components/CleaningTask/CleaningTask';
 import Dashboard from './components/Dashboard/Dashboard';
 import WGRegDone from './components/WGRegDone/WGRegDone';
+import AddExpense from './components/AddExpense/AddExpense';
 
 export default class App extends React.Component {
   render() {
     return (
       // <Login />
-      //<Registration></Registration>
+      // <Registration />
       // <LoggedIn />
       // <WGJoin />
       // <WGReg />
-      //<Settlement1/>
-      //<Settlement2/>
-      //<Flex/>
+      // <Settlement1 />
+      // <Settlement2 />
+      // <Flex />
       // <NewAnnoucement />
       // <CleaningTask />
-      // <WGRegDone/>
-      <Dashboard />
+      // <WGRegDone />
+      // <Dashboard />
+      <AddExpense />
     );
   }
 }
