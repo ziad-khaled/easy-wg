@@ -4,8 +4,8 @@ const {
     Model
 } = require('sequelize');
 
-class PurchaseItem extends Model { }
-PurchaseItem.init({
+class PurchasedItem extends Model { }
+PurchasedItem.init({
     product_name: {
         type: DataTypes.STRING,
         allowNull: false
@@ -24,4 +24,4 @@ PurchaseItem.init({
 });
 
 
-module.exports = PurchaseItem;
+module.exports = PurchasedItem;

@@ -5,7 +5,7 @@ const Announcement = require('./Announcement')
 const Purchase = require('./Purchase')
 const Task = require('./Task')
 const WGRoom = require('./WGRoom')
-const PurchaseItem = require('./PurchaseItem')
+const PurchasedItem = require('./PurchasedItem')
 
 User.hasOne(WGRoom, {
     as: 'habitant'
@@ -29,8 +29,8 @@ WG.belongsToMany(User, {
     through: 'WGMembers'
 });
 
-Purchase.hasMany(PurchaseItem);
-PurchaseItem.belongsTo(Purchase);
+Purchase.hasMany(PurchasedItem);
+PurchasedItem.belongsTo(Purchase);
 
 WG.hasMany(Purchase);
 Purchase.belongsTo(WG);
