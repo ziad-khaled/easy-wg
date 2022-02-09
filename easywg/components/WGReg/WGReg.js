@@ -9,6 +9,22 @@ class WGReg extends Component {
     }
     render() {
         return (
+          <View style={styles.container}>
+          <Image 
+                  style={styles.logo}
+                  source={require('../../assets/logo.png')}>
+          </Image>
+
+
+          <View style={styles.midContent}>
+              
+          </View>
+
+          <View style={styles.footer}>
+              
+          </View>                
+      </View>
+
             <View style={styles.container}>
                 <Image 
                     style={{ height: '25%', width: '50%', marginBottom: 15}}
