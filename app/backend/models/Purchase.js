@@ -8,7 +8,6 @@ class Purchase extends Model { }
 Purchase.init({
     receiptPath: {
         type: DataTypes.STRING,
-        allowNull: false
     },
     date: {
         type: DataTypes.DATE,
