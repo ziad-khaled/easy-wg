@@ -13,6 +13,9 @@ PurchaseItem.init({
     product_price: {
         type: DataTypes.FLOAT,
         allowNull: false
+    },
+    note: {
+        type: DataTypes.STRING
     }
 
 }, {
