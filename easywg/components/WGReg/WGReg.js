@@ -34,10 +34,6 @@ class WGReg extends Component {
 
         </View>
       </View>
-
-
-       
-      </View >
     );
   }
 }
