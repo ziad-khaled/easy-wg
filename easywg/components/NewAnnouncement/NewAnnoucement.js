@@ -13,6 +13,22 @@ class NewAnnoucement extends Component {
     render() {
         return (
             <View style={styles.container}>
+            <Image 
+                    style={styles.logo}
+                    source={require('../../assets/logo.png')}>
+            </Image>
+  
+  
+            <View style={styles.midContent}>
+                
+            </View>
+  
+            <View style={styles.footer}>
+                
+            </View>                
+        </View>
+
+            <View style={styles.container}>
 
                 <Text style={styles.logo}>Hello, {this.state.wgName}</Text>
 

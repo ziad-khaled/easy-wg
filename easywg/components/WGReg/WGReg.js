@@ -11,21 +11,33 @@ class WGReg extends Component {
     return (
       <View style={styles.container}>
         <Image
-          style={{ height: '25%', width: '56%', marginBottom: 15 }}
-          source={require('../../assets/logo.png')}></Image>
+          style={styles.logo}
+          source={require('../../assets/logo.png')}>
+        </Image>
 
-        <Text style={styles.logo}>Hello, {this.state.userName}</Text>
 
-        <Text style={styles.title}>Please Enter WG Code</Text>
-        <View style={styles.inputView} >
-          <TextInput
-            style={styles.inputText}
-            onChangeText={text => this.setState({ password: text })} />
+        <View style={styles.midContent}>
+          <Text style={styles.logo}>Hello, {this.state.userName}</Text>
+
+          <Text style={styles.title}>Please Enter WG Code</Text>
+          <View style={styles.inputView} >
+            <TextInput
+              style={styles.inputText}
+              onChangeText={text => this.setState({ password: text })} />
+          </View>
+          <TouchableOpacity style={styles.textBtn}>
+            <Text style={styles.btnText}>Join</Text>
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.textBtn}>
-          <Text style={styles.btnText}>Join</Text>
-        </TouchableOpacity>
+
+        <View style={styles.footer}>
+
+        </View>
       </View>
+
+
+       
+      </View >
     );
   }
 }

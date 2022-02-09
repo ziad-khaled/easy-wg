@@ -11,6 +11,7 @@ import Flex from './components/FlexTest/Flex';
 import NewAnnoucement from './components/NewAnnouncement/NewAnnoucement';
 import CleaningTask from './components/CleaningTask/CleaningTask';
 import Dashboard from './components/Dashboard/Dashboard';
+import WGRegDone from './components/WGRegDone/WGRegDone';
 
 export default class App extends React.Component {
   render() {
@@ -25,6 +26,7 @@ export default class App extends React.Component {
       //<Flex/>
       // <NewAnnoucement />
       // <CleaningTask />
+      // <WGRegDone/>
       <Dashboard />
     );
   }

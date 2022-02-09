@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, Dimensions } from 'react-native';
+
+var deviceWidth = Dimensions.get('window').width; //full width
+var deviceHeight = Dimensions.get('window').height; //full height
 
 class LoggedIn extends Component {
   state = {
@@ -10,18 +13,24 @@ class LoggedIn extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image
-          style={{ height: '25%', width: '56%', marginBottom: 15 }}
-          source={require('../../assets/logo.png')}></Image>
+        <Image 
+                style={styles.logo}
+                source={require('../../assets/logo.png')}>
+        </Image>
 
-        <Text style={styles.logo}>Hello, {this.state.userName}</Text>
+        <View style={styles.midContent}>
+          <Text style={styles.userTitle}>Hello, {this.state.userName}</Text>
 
-        <TouchableOpacity style={styles.textBtn}>
-          <Text style={styles.btnText}>Join WG</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.textBtn}>
-          <Text style={styles.btnText}>Register New WG</Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.textBtn}>
+            <Text style={styles.btnText}>Join WG</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.textBtn}>
+            <Text style={styles.btnText}>Register New WG</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.footer}>
+            
+        </View>                
       </View>
     );
   }
@@ -30,18 +39,31 @@ class LoggedIn extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     backgroundColor: '#2B2B2B',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  logo: {
+  logo:{
+    flex: 2.5,
+    width: '75%',
+  },
+  midContent:{
+    flex: 4,
+    flexDirection: 'column',
+    justifyContent:"flex-start",
+    alignItems:"center",
+    width: deviceWidth*.75,
+    marginTop:50
+  }, 
+  userTitle: {
     fontWeight: "bold",
-    fontSize: 30,
+    fontSize: 20,
     color: "#B2ABAB",
     marginBottom: 30,
   },
   textBtn: {
-    width: "50%",
+    width: "70%",
     backgroundColor: "#2B2B2B",
     borderRadius: 25,
     borderColor: "#B2ABAB",
@@ -55,10 +77,9 @@ const styles = StyleSheet.create({
   btnText: {
     color: "#B2ABAB",
   },
-  registrationText: {
-    color: "white",
-    marginTop: 40
-  }
+  footer:{
+      flex: 1,
+  },  
 });
 
 export default LoggedIn;
