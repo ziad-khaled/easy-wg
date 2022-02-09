@@ -10,23 +10,14 @@ class Settlement2 extends Component {
     render() {
         return (
           <View style={styles.container}>
-          <Image 
-                  style={styles.logo}
-                  source={require('../../assets/logo.png')}>
-          </Image>
+            <Image 
+                    style={styles.logo}
+                    source={require('../../assets/logo.png')}>
+            </Image>
 
 
-          <View style={styles.midContent}>
-              
-          </View>
-
-          <View style={styles.footer}>
-              
-          </View>                
-      </View>
-
-            <View style={styles.container}>
-                <Text style={styles.logo}>Hello, {this.state.userName}</Text>
+            <View style={styles.midContent}>
+              <Text style={styles.logo}>Hello, {this.state.userName}</Text>
                 <Text style={styles.title}>Total: € {this.state.totalSpending}</Text>  
                       
                 <Text style={styles.title}>The average cost was €{this.state.avgCost}</Text>
@@ -42,6 +33,11 @@ class Settlement2 extends Component {
                     <Text style={styles.btnText}>Settled</Text>
                 </TouchableOpacity>
             </View>
+
+            <View style={styles.footer}>
+                
+            </View>                
+        </View>
         );
     }
 }

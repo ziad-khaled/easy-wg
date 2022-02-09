@@ -10,38 +10,30 @@ class WGReg extends Component {
     render() {
         return (
           <View style={styles.container}>
-          <Image 
-                  style={styles.logo}
-                  source={require('../../assets/logo.png')}>
-          </Image>
+            <Image 
+                    style={styles.logo}
+                    source={require('../../assets/logo.png')}>
+            </Image>
 
 
-          <View style={styles.midContent}>
-              
-          </View>
+            <View style={styles.midContent}>
+              <Text style={styles.logo}>Hello, {this.state.userName}</Text>
 
-          <View style={styles.footer}>
-              
-          </View>                
-      </View>
-
-            <View style={styles.container}>
-                <Image 
-                    style={{ height: '25%', width: '50%', marginBottom: 15}}
-                    source={require('../../assets/logo.png')}></Image>
-
-                <Text style={styles.logo}>Hello, {this.state.userName}</Text>
-
-                <Text style={styles.title}>Please Enter WG Code</Text>         
-                <View style={styles.inputView} >
-                    <TextInput  
-                    style={styles.inputText}
-                    onChangeText={text => this.setState({password:text})}/>
-                </View>
-                <TouchableOpacity style={styles.textBtn}>
-                    <Text style={styles.btnText}>Join</Text>
-                </TouchableOpacity>
+              <Text style={styles.title}>Please Enter WG Code</Text>         
+              <View style={styles.inputView} >
+                  <TextInput  
+                  style={styles.inputText}
+                  onChangeText={text => this.setState({password:text})}/>
+              </View>
+              <TouchableOpacity style={styles.textBtn}>
+                  <Text style={styles.btnText}>Join</Text>
+              </TouchableOpacity>
             </View>
+
+            <View style={styles.footer}>
+                
+            </View>                
+          </View>
         );
     }
 }

@@ -12,41 +12,28 @@ class NewAnnoucement extends Component {
     }
     render() {
         return (
-            <View style={styles.container}>
-            <Image 
-                    style={styles.logo}
-                    source={require('../../assets/logo.png')}>
-            </Image>
+            <View style={styles.container}> 
   
-  
-            <View style={styles.midContent}>
-                
-            </View>
-  
-            <View style={styles.footer}>
-                
-            </View>                
-        </View>
+                <View style={styles.midContent}>
+                    <Text style={styles.logo}>Hello, {this.state.wgName}</Text>
 
-            <View style={styles.container}>
-
-                <Text style={styles.logo}>Hello, {this.state.wgName}</Text>
-
-                <Text style={styles.logo}>Write message {this.state.wgTotalRoom}</Text>
+                    <Text style={styles.logo}>Write message {this.state.wgTotalRoom}</Text>
 
 
-                <TextInput
-                    style={styles.input}
-                    multiline
-                // onChangeText={onChangeText}
-                // value={text}
-                />
-
-
-
-                <TouchableOpacity style={styles.textBtn}>
-                    <Text style={styles.btnText}>Publish</Text>
-                </TouchableOpacity>
+                    <TextInput
+                        style={styles.input}
+                        multiline
+                    // onChangeText={onChangeText}
+                    // value={text}
+                    />
+                    <TouchableOpacity style={styles.textBtn}>
+                        <Text style={styles.btnText}>Publish</Text>
+                    </TouchableOpacity>
+                </View>
+    
+                <View style={styles.footer}>
+                    
+                </View>                
             </View>
         );
     }
