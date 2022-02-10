@@ -4,6 +4,7 @@ const WGModel = require("../models/WG");
 const userModel = require('../models/User')
 const { Op } = require("sequelize");
 const { nanoid } = require('nanoid')
+const { getRandomValues } = require('crypto').webcrypto
 var jwt = require('jsonwebtoken');
 const WGRoomModel = require("../models/WGRoom");
 
@@ -59,7 +60,10 @@ router.post('/', async function (request, response) {
         },
     });
 
-    const wgCode = await nanoid(12); // generate secure random string https://github.com/ai/nanoid
+    // const wgCode = await nanoid(12); // generate secure random string https://github.com/ai/nanoid
+    var array = new Uint32Array(1);
+    getRandomValues(array);
+    const wgCode = '' + array[0];
 
     const newWG = await WGModel.create({ name: request.body.name, code: wgCode, totalRoomsNumber: request.body.totalRoomsNumber });
     await newWG.setAdmin(user);
