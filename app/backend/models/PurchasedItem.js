@@ -4,15 +4,18 @@ const {
     Model
 } = require('sequelize');
 
-class PurchaseItem extends Model { }
-PurchaseItem.init({
-    product_name: {
+class PurchasedItem extends Model { }
+PurchasedItem.init({
+    productName: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    product_price: {
+    productPrice: {
         type: DataTypes.FLOAT,
         allowNull: false
+    },
+    note: {
+        type: DataTypes.STRING
     }
 
 }, {
@@ -21,4 +24,4 @@ PurchaseItem.init({
 });
 
 
-module.exports = PurchaseItem;
+module.exports = PurchasedItem;

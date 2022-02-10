@@ -434,6 +434,8 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,linux,git,reactnative
 
+# Uploads dir on server
+app/backend/uploads
 
 # React Native .gitignore Files
 easywg/node_modules/
