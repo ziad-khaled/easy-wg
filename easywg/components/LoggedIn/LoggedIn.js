@@ -1,47 +1,52 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, Dimensions } from 'react-native';
+import jwt_decode from "jwt-decode";
+
 
 var deviceWidth = Dimensions.get('window').width; //full width
 var deviceHeight = Dimensions.get('window').height; //full height
 
-class LoggedIn extends Component {
-  state = {
-    userName: "Team 1B",
-    email: "",
-    password: ""
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        <Image 
-                style={styles.logo}
-                source={require('../../assets/logo.png')}>
-        </Image>
+const LoggedIn = (props) => {
 
-        <View style={styles.midContent}>
-          <Text style={styles.userTitle}>Hello, {this.state.userName}</Text>
+  const [userName, setUserName] = useState("")
 
-          <TouchableOpacity 
-            style={styles.textBtn}            
-            onPress={()=>{
-              this.props.navigation.navigate('WGJoin')
-            }}>
-            <Text style={styles.btnText}>Join WG</Text>
-          </TouchableOpacity>
-          <TouchableOpacity 
-            style={styles.textBtn}
-            onPress={()=>{
-              this.props.navigation.navigate('WGReg')
-            }}>
-            <Text style={styles.btnText}>Register New WG</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.footer}>
-            
-        </View>                
+  useEffect(() => {
+      const decoded = jwt_decode(localStorage.getItem('token'))
+      console.log(decoded)
+      const name = decoded.username
+      setUserName(name)
+  })
+
+  return (
+    <View style={styles.container}>
+      <Image 
+              style={styles.logo}
+              source={require('../../assets/logo.png')}>
+      </Image>
+
+      <View style={styles.midContent}>
+        <Text style={styles.userTitle}>Hello, {userName}</Text>
+
+        <TouchableOpacity 
+          style={styles.textBtn}            
+          onPress={()=>{
+            props.navigation.navigate('WGJoin')
+          }}>
+          <Text style={styles.btnText}>Join WG</Text>
+        </TouchableOpacity>
+        <TouchableOpacity 
+          style={styles.textBtn}
+          onPress={()=>{
+            props.navigation.navigate('WGReg')
+          }}>
+          <Text style={styles.btnText}>Register New WG</Text>
+        </TouchableOpacity>
       </View>
-    );
-  }
+      <View style={styles.footer}>
+          
+      </View>                
+    </View>
+  );  
 }
 
 const styles = StyleSheet.create({

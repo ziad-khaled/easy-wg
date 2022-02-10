@@ -1,79 +1,101 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, Dimensions } from 'react-native';
+import axios from 'axios';
 
 var deviceWidth = Dimensions.get('window').width; //full width
 var deviceHeight = Dimensions.get('window').height; //full height
 
-class Registration extends Component {
-  state = {
-    name: "",
-    email: "",
-    password: "",
-    contactNo: "",
+const Registration = (props) => {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
+  const [contactNumber, setContactNumber] = useState("")
+
+  const handleRegistration = async () => {
+    if (email && (password === confirmPassword)) {
+      const body = {
+        name: name,
+        email: email,
+        password: password,
+        contactNumber: contactNumber
+      }
+
+      try {
+        const result = await axios.post('http://localhost:3200/api/signup', body)
+        props.navigation.navigate('Home')
+        console.log(result)
+      } catch (error) {
+        console.error(error)
+      } 
+    } else if (password !== confirmPassword) {
+      alert('Password and confirm password does not match' )
+    } else {
+      alert('Please fill up all the fields')
+    }
   }
-  render() {
-    return (
-      <View style={styles.container}>
-          <Image 
-                  style={styles.logo}
-                  source={require('../../assets/logo.png')}>
-          </Image>
 
+  return (
+    <View style={styles.container}>
+        <Image 
+                style={styles.logo}
+                source={require('../../assets/logo.png')}>
+        </Image>
 
-          <View style={styles.midContent}>
-            <View style={styles.inputView} >
-            <TextInput
-              style={styles.inputText}
-              placeholder="Name"
-              placeholderTextColor="#B2ABAB"
-              justifyContent="center"
-              onChangeText={text => this.setState({ name: text })} />
-          </View>
+        <View style={styles.midContent}>
           <View style={styles.inputView} >
-            <TextInput
-              style={styles.inputText}
-              placeholder="Email"
-              placeholderTextColor="#B2ABAB"
-              justifyContent="center"
-              onChangeText={text => this.setState({ email: text })} />
-          </View>
-          <View style={styles.inputView} >
-            <TextInput
-              style={styles.inputText}
-              placeholder="Password"
-              placeholderTextColor="#B2ABAB"
-              justifyContent="center"
-              onChangeText={text => this.setState({ password: text })} />
-          </View>
-          <View style={styles.inputView} >
-            <TextInput
-              style={styles.inputText}
-              placeholder="Confirm Password"
-              placeholderTextColor="#B2ABAB"
-              justifyContent="center"
-              onChangeText={text => this.setState({ email: text })} />
-          </View>
-          <View style={styles.inputView} >
-            <TextInput
-              secureTextEntry
-              style={styles.inputText}
-              placeholder="Contact No."
-              placeholderTextColor="#B2ABAB"
-              onChangeText={text => this.setState({ contactNo: text })} />
-          </View>
-          <TouchableOpacity 
-            style={styles.registrationBtn}
-            onPress={()=>{
-              this.props.navigation.navigate('LoggedIn')
-            }}>
-            <Text style={styles.loginText}>Create Account</Text>
-          </TouchableOpacity>
-          </View>
+          <TextInput
+            style={styles.inputText}
+            placeholder="Name"
+            placeholderTextColor="#B2ABAB"
+            justifyContent="center"
+            onChangeText={text => setName(text)} />
+        </View>
+        <View style={styles.inputView} >
+          <TextInput
+            style={styles.inputText}
+            placeholder="Email"
+            placeholderTextColor="#B2ABAB"
+            justifyContent="center"
+            onChangeText={text => setEmail(text)} />
+        </View>
+        <View style={styles.inputView} >
+          <TextInput
+            secureTextEntry
+            style={styles.inputText}
+            placeholder="Password"
+            placeholderTextColor="#B2ABAB"
+            justifyContent="center"
+            onChangeText={text => setPassword(text)} />
+        </View>
+        <View style={styles.inputView} >
+          <TextInput
+            secureTextEntry
+            style={styles.inputText}
+            placeholder="Confirm Password"
+            placeholderTextColor="#B2ABAB"
+            justifyContent="center"
+            onChangeText={text => setConfirmPassword(text)} />
+        </View>
+        <View style={styles.inputView} >
+          <TextInput
+            style={styles.inputText}
+            placeholder="Contact No."
+            placeholderTextColor="#B2ABAB"
+            onChangeText={text => setContactNumber(text)} />
+        </View>
+        <TouchableOpacity 
+          style={styles.registrationBtn}
+          onPress={()=>{
+            handleRegistration()
+          }}>
+          <Text style={styles.loginText}>Create Account</Text>
+        </TouchableOpacity>
+        </View>
 
-          <View style={styles.footer}></View>                
-      </View>
-    );
-  }
+        <View style={styles.footer}></View>                
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

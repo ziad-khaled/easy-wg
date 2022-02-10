@@ -26,10 +26,11 @@ export default class App extends React.Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name='Home' component={Login} />
-          <Stack.Screen name='Registration' component={Registration} />
-
+        <Stack.Navigator>   
+          
+          <Stack.Screen name='Home' component={Login} />  
+          <Stack.Screen name='Registration' component={Registration} />        
+                  
           <Stack.Screen name='LoggedIn' component={LoggedIn} />
 
           <Stack.Screen name='WGJoin' component={WGJoin} />

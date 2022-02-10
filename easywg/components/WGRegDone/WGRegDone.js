@@ -6,14 +6,15 @@ import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, Dimensions 
 var deviceWidth = Dimensions.get('window').width; //full width
 var deviceHeight = Dimensions.get('window').height; //full height
 
-class WGRegDone extends Component {
-    state = {
+const WGRegDone = ({route, navigation}) => {
+    const { name, room, code, id } = route.params;
+
+/*     state = {
         wgName: "Team 1B",
         wgTotalRoom: "4",
         wgCode: "425689"
 
-    }
-    render() {
+    } */
         return (
             <View style={styles.container}>
                 <Image
@@ -23,28 +24,16 @@ class WGRegDone extends Component {
 
 
                 <View style={styles.midContent}>
-                    <Text style={styles.textStyle}>WG Name: {this.state.wgName}</Text>
+                    <Text style={styles.textStyle}>WG Name: {name}</Text>
 
-                    <Text style={styles.textStyle}>Total Room No: {this.state.wgTotalRoom}</Text>
+                    <Text style={styles.textStyle}>Total Room No: {room}</Text>            
 
-                    <Text style={styles.textStyle}>Room Numbers:  {this.state.userName}</Text>
-
-                    <View style={styles.roomNumberList}>
-                        <Text style={styles.roomNumberTxt}>101</Text>
-
-                        <Text style={styles.roomNumberTxt}>102</Text>
-
-                        <Text style={styles.roomNumberTxt}>103</Text>
-
-                        <Text style={styles.roomNumberTxt}>104</Text>
-                    </View>
-
-                    <Text style={styles.textStyle}>WG Code: {this.state.wgCode}</Text>
+                    <Text style={styles.textStyle}>WG Code: {code}</Text>
 
                     <TouchableOpacity 
                         style={styles.dashBoardBtn}
                         onPress={()=>{
-                            this.props.navigation.navigate('Dashboard')
+                            props.navigation.navigate('Dashboard')
                         }}>
                         <Text style={styles.btnText}>Go to Dashboard</Text>
                     </TouchableOpacity>
@@ -55,7 +44,6 @@ class WGRegDone extends Component {
                 </View>
             </View>
         );
-    }
 }
 
 const styles = StyleSheet.create({

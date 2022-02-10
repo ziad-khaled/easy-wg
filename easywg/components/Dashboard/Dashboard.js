@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, Dimensions } from 'react-native';
+import axios from 'axios';
 
 var deviceWidth = Dimensions.get('window').width; //full width
 var deviceHeight = Dimensions.get('window').height; //full height
@@ -7,12 +8,33 @@ var deviceHeight = Dimensions.get('window').height; //full height
 class Dashboard extends Component {
     state = {
         wgName: "Team 1B",
-        anwarMoEx: "20",
-        hasibMoEx: "15",
-        soyamMoEx: "25",
-        ziadMoEx: "30"
-
+        members: []
     }
+
+    async componentDidMount() {
+        try {
+            const result = await axios.get('http://localhost:3200/api/wgs/1/dashboard', {
+                headers: {
+                    "Authorization": `Bearer ${localStorage.getItem('token')}`
+                }
+            })
+            //props.navigation.navigate('LoggedIn')
+            console.log(result)
+            const memberInfo = result.data.data.membersSpendingsSummary.map(member => ({
+                    name: member.userName,
+                    spending: member.spending
+                }))
+            this.setState({
+                ...this.state,
+                members: memberInfo,
+                wgName: result.data.data.wg.name
+            })
+            } catch (error) {
+            console.error(error)
+            }
+    }
+    
+
     render() {
         return (
             <View style={styles.container}>
@@ -41,10 +63,11 @@ class Dashboard extends Component {
 
                     <View style={styles.memberListView} >
 
-                        <Text style={styles.individualExpencese}>1. Anwer = {this.state.anwarMoEx}</Text>
-                        <Text style={styles.individualExpencese}>2. Hasib = {this.state.hasibMoEx}</Text>
-                        <Text style={styles.individualExpencese}>3. Soyam = {this.state.soyamMoEx}</Text>
-                        <Text style={styles.individualExpencese}>4. Ziad = {this.state.ziadMoEx}</Text>
+                        {
+                            this.state.members.map((member, index) => (
+                                <Text style={styles.individualExpencese}>{index+1}. {member.name} = {member.spending}</Text>
+                            ))
+                        }
                         <Text style={styles.individualExpencese}>Next Cleaning: Hasib</Text>
                         <Text style={styles.individualExpencese}>Date : 10.02.2022 to 16.02.2022</Text>
 
