@@ -4,7 +4,10 @@ var jwt = require('jsonwebtoken');
 const WGModel = require("../models/WG");
 const userModel = require('../models/User')
 const purchaseModel = require('../models/Purchase')
-const multer = require('multer')
+const purchasedItemModel = require('../models/PurchasedItem')
+const multer = require('multer');
+const { Op } = require('sequelize');
+const sequelize = require('../models/db_connection');
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './uploads/receipts')
@@ -114,7 +117,8 @@ router.post('/purchases', upload.single('receiptImage'), async function (request
     4. Find expenses with search parameters
     5. Send purchases in the found expense
  */
-/* router.get('/expenses', function(request, response) {
+    
+router.get('/dashboard', async function(request, response) {
     var isDataMissing = false;
     var missingFields = [];
     if (!request.headers.authorization) {
@@ -148,32 +152,59 @@ router.post('/purchases', upload.single('receiptImage'), async function (request
 
     const wg = await WGModel.findOne({
         where: {
-            id: request.body.id
+            id: request.body.wgID
         }
     });
 
-    const user = wg.members.filter(user => user.id === userID)
+    const token = request.headers.authorization.split(' ')[1]
+    const secret = "VERY TOP SECRET!!!";
+    const decodedToken = jwt.verify(token, secret);
+    const userID = decodedToken.id;
+    const wgMembers = await wg.getMembers();
+    const user = wgMembers.find(user => user.id === userID);
 
     if (!user) {
         response.json({
             success: false,
-            message: "User is not authorized to view this WG."
+            message: "User is not authorized to view this WG expenses."
         });
 
         return;
     }
 
+    const membersSpendings = [];
+    for (member of wgMembers) {
+        let memberSpending = 0;
+        const wgPurchases = await wg.getPurchases();
+        const memberPurchases = wgPurchases.filter(purchase => purchase.UserId === member.id && purchase.isSettled === false);
+        memberPurchases.map(purchase => memberSpending += purchase.totalCost);
+        membersSpendings.push({userName: member.name, spending: memberSpending});
+    }
 
-    const expenses = await expensesModel.findOne({
+
+    const purchases = await purchaseModel.findOne({
         where: {
-            wgID: request.body.id,
-            month: request.body.month,
-            year: request.body.year,
+            [Op.and]: [
+            {wgID: request.body.wgID},
+            sequelize.where(sequelize.fn('MONTH', sequelize.col('date')), request.body.month),
+            sequelize.where(sequelize.fn('YEAR', sequelize.col('date')), request.body.year),
+            ]
+        },
+        include: [userModel, purchasedItemModel]
+    });
+
+    response.json({
+        success: true,
+        message: "Expenses retrieved successfully.",
+        data: {
+            userName: user.name,
+            membersSpendingSummary: membersSpendings,
+            purchases: purchases
         }
     })
 
 
     
-}) */
+})
 
 module.exports = router;
