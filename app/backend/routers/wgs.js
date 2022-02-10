@@ -246,7 +246,7 @@ router.get('/:id/dashboard', async function (request, response) {
     for (member of wgMembmers) {
         let memberSpending = 0;
         const wgPurchases = await wg.getPurchases();
-        const memberPurchases = wgPurchases.filter(purchase => purchase.UserId === member.id && isSettled === false);
+        const memberPurchases = wgPurchases.filter(purchase => purchase.UserId === member.id && purchase.isSettled === false);
         memberPurchases.map(purchase => memberSpending += purchase.totalCost);
         membersSpendings.push({userName: member.name, spending: memberSpending});
     }
