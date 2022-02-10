@@ -6,11 +6,11 @@ const {
 
 class PurchasedItem extends Model { }
 PurchasedItem.init({
-    product_name: {
+    productName: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    product_price: {
+    productPrice: {
         type: DataTypes.FLOAT,
         allowNull: false
     },

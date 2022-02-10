@@ -10,7 +10,7 @@ Purchase.init({
         type: DataTypes.STRING,
     },
     date: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false
     },
     isSettled: {
