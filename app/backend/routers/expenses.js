@@ -211,7 +211,7 @@ router.get('/dashboard', async function(request, response) {
     3. Update the expesense to settled
     4. Send response to user
  */
-router.post('/settle', async function(request, response) {
+router.patch('/settle', async function(request, response) {
     var isDataMissing = false;
     var missingFields = [];
     if (!request.headers.authorization) {
