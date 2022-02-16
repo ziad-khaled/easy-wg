@@ -117,7 +117,7 @@ router.get('/', async function (request, response) {
     if (!user) {
         response.json({
             success: false,
-            message: "User is not authorized to add tasks to this WG."
+            message: "User is not authorized to view tasks of this WG."
         });
 
         return;
