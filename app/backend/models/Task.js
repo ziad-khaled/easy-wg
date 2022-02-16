@@ -6,7 +6,7 @@ const {
 
 class Task extends Model { }
 Task.init({
-    date: {
+    deadline: {
         type: DataTypes.DATE,
         allowNull: false
     },
@@ -15,7 +15,11 @@ Task.init({
         allowNull: false,
         defaultValue: false
     },
-    comment: {
+    title : {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    description: {
         type: DataTypes.STRING,
         allowNull: true
     }

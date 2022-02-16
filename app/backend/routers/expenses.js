@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-var jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 const WGModel = require("../models/WG");
 const userModel = require('../models/User')
 const purchaseModel = require('../models/Purchase')
@@ -203,8 +203,83 @@ router.get('/dashboard', async function(request, response) {
         }
     })
 
+});
 
+/* 
+    1. Check for missing data
+    2. Check if user is authorized to settle this expense
+    3. Update the expesense to settled
+    4. Send response to user
+ */
+router.patch('/settle', async function(request, response) {
+    var isDataMissing = false;
+    var missingFields = [];
+    if (!request.headers.authorization) {
+        isDataMissing = true;
+        missingFields.push("request header authorization token");
+    }
+
+    if (!request.body.wgID) {
+        isDataMissing = true;
+        missingFields.push('wgID');
+    }
+
+    if (!request.body.month) {
+        isDataMissing = true;
+        missingFields.push('month');
+    }
+
+    if (!request.body.year) {
+        isDataMissing = true;
+        missingFields.push('month');
+    }
+
+    if (isDataMissing) {
+        response.json({
+            success: false,
+            message: "Can't seach for expenses, missing data " + missingFields.join(', '),
+        });
+
+        return;
+    }
+
+    const wg = await WGModel.findOne({
+        where: {
+            id: request.body.wgID
+        }
+    });
+
+    const token = request.headers.authorization.split(' ')[1]
+    const secret = "VERY TOP SECRET!!!";
+    const decodedToken = jwt.verify(token, secret);
+    const userID = decodedToken.id;
+    const wgMembers = await wg.getMembers();
+    const user = wgMembers.find(user => user.id === userID);
+
+    if (!user) {
+        response.json({
+            success: false,
+            message: "User is not authorized to settle this WG expenses."
+        });
+
+        return;
+    }
+
+    await purchaseModel.update({isSettled: true}, {
+        where: {
+            [Op.and]: [
+            {wgID: request.body.wgID},
+            sequelize.where(sequelize.fn('MONTH', sequelize.col('date')), request.body.month),
+            sequelize.where(sequelize.fn('YEAR', sequelize.col('date')), request.body.year),
+            ]
+        }
+    });
+
+    response.json({
+        success: true,
+        message: "This WG expenses have been settled."
+    })  
     
-})
+});
 
 module.exports = router;
