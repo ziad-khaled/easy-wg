@@ -6,6 +6,7 @@ const indexRouter = require('./routers/index');
 const wgsRouter = require('./routers/wgs');
 const expensesRouter = require('./routers/expenses')
 const tasksRouter = require('./routers/tasks')
+const announcementsRouter = require('./routers/announcements')
 const port = 3000;
 
 const app = express();
@@ -43,6 +44,6 @@ app.use('/api', indexRouter);
 app.use('/api/wgs', wgsRouter);
 app.use('/api/expenses/', expensesRouter);
 app.use('/api/tasks', tasksRouter);
-
+app.use('/api/announcements', announcementsRouter);
 
 

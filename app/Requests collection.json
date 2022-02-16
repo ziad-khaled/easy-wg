@@ -1,7 +1,7 @@
 {
     "_type": "export",
     "__export_format": 4,
-    "__export_date": "2022-02-16T03:19:33.618Z",
+    "__export_date": "2022-02-16T08:12:15.597Z",
     "__export_source": "insomnia.desktop.app:v2021.7.2",
     "resources": [{
         "_id": "req_3b6d81711a994d9c9740e31399451db4",
@@ -466,7 +466,7 @@
     }, {
         "_id": "req_9ac82cf7b79c4dc084777c8aa99ac278",
         "parentId": "fld_b692c738a1004de7b625585d323fd852",
-        "modified": 1644981495956,
+        "modified": 1644998842492,
         "created": 1644976504450,
         "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/tasks",
         "name": "get all wg tasks",
@@ -512,6 +512,81 @@
             "token": "{{ _.token }}"
         },
         "metaSortKey": -1644976504400,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "req_8a301cdaf201471e8840a2ba1910acc7",
+        "parentId": "fld_a9d425cd279047d3b2d48e83206ef12b",
+        "modified": 1644999053783,
+        "created": 1644998869651,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/announcements",
+        "name": "add announcement",
+        "description": "",
+        "method": "POST",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"wgID\": 1,\n\t\"message\": \"let's finish this project!\"\n}"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_f7fb47d33ba24d1a92cb7ffc0dae548c"
+        }],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644998869651,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_a9d425cd279047d3b2d48e83206ef12b",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644998860880,
+        "created": 1644998860880,
+        "name": "Announcements",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644998860880,
+        "_type": "request_group"
+    }, {
+        "_id": "req_e9ba865a7cba451aa467458fb3c33729",
+        "parentId": "fld_a9d425cd279047d3b2d48e83206ef12b",
+        "modified": 1644999113585,
+        "created": 1644999070790,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/announcements",
+        "name": "get announcements",
+        "description": "",
+        "method": "GET",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"wgID\": 1\n}"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_557bde4343664f87a6edbebd1d6b0205"
+        }],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644999070790,
         "isPrivate": false,
         "settingStoreCookies": true,
         "settingSendCookies": true,
