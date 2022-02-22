@@ -1,0 +1,664 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2022-02-19T08:18:11.369Z",
+    "__export_source": "insomnia.desktop.app:v2021.7.2",
+    "resources": [{
+        "_id": "req_3b6d81711a994d9c9740e31399451db4",
+        "parentId": "fld_e3753c7d3ddd48f79a4e393b3ba93f26",
+        "modified": 1644487165973,
+        "created": 1643535933032,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/login",
+        "name": "login",
+        "description": "",
+        "method": "GET",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"email\" : \"ziad@easywg.com\",\n\t\"password\" : \"password\"\n}"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_cc2042072156468bb42a36dfdc92fc86"
+        }, {
+            "id": "pair_4c38fae844c14f459a7f54a7ebdb3878",
+            "name": "",
+            "value": "",
+            "description": ""
+        }],
+        "authentication": {},
+        "metaSortKey": -1643535933032,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_e3753c7d3ddd48f79a4e393b3ba93f26",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644174281965,
+        "created": 1643535924970,
+        "name": "Landing View",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270494,
+        "_type": "request_group"
+    }, {
+        "_id": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "parentId": null,
+        "modified": 1643535770322,
+        "created": 1643535770322,
+        "name": "Requests collection",
+        "description": "",
+        "scope": "collection",
+        "_type": "workspace"
+    }, {
+        "_id": "req_a039f9cb369342358202b55cf292ab5e",
+        "parentId": "fld_37384b2c1795410094539ef49070af9b",
+        "modified": 1644487155378,
+        "created": 1643538503510,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/signup",
+        "name": "signup",
+        "description": "",
+        "method": "POST",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"name\" : \"Ziad Khaled\",\n\t\"password\": \"password\",\n\t\"email\" : \"test_ziadad@easywg.com\",\n\t\"contactNumber\" : \"100034\"\n}"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_e7f729d619f14b07a4f2033c46d8bfb4"
+        }],
+        "authentication": {},
+        "metaSortKey": -1643538503510,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_37384b2c1795410094539ef49070af9b",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644174285909,
+        "created": 1643538472258,
+        "name": "Registration View",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270469,
+        "_type": "request_group"
+    }, {
+        "_id": "req_a9a4ffcc95ec459eac9a0a37172f0563",
+        "parentId": "fld_1ac961ca47084df89bbcb0ebe029a73d",
+        "modified": 1644487176438,
+        "created": 1644175837374,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/wgs",
+        "name": "Register WG",
+        "description": "",
+        "method": "POST",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"name\": \"The Wayne house\",\n\t\"totalRoomsNumber\" : 2,\n\t\"rooms\" : [\"1\", \"2\"]\n}\t"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_3328fae1cd6448bd84faf8bd8cb8791e"
+        }, {
+            "id": "pair_9f2ad8191ac3468f9a77f8a34bac71d6",
+            "name": "",
+            "value": "",
+            "description": ""
+        }],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644174270394,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_1ac961ca47084df89bbcb0ebe029a73d",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644259401578,
+        "created": 1644174270444,
+        "name": "WG Registration View",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270462.75,
+        "_type": "request_group"
+    }, {
+        "_id": "req_7d533f946d794008a78d0eaf0d2f7992",
+        "parentId": "fld_5f56c19f1b8349d0a30710af3448c3f5",
+        "modified": 1644487182057,
+        "created": 1644197381359,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/wgs/6",
+        "name": "Get WG info",
+        "description": "",
+        "method": "GET",
+        "body": {},
+        "parameters": [],
+        "headers": [],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644197381359,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_5f56c19f1b8349d0a30710af3448c3f5",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644259391695,
+        "created": 1644197350909,
+        "name": "WG Registration Done View",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270456.5,
+        "_type": "request_group"
+    }, {
+        "_id": "req_0d3a85f6732140e6aabaecf15866a8ea",
+        "parentId": "fld_ca7bbd5221734d3a9f7b638ba65b138e",
+        "modified": 1644346738293,
+        "created": 1644259427824,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/wgs/join",
+        "name": "join",
+        "description": "",
+        "method": "POST",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"code\": \"Dqjtsocnfxwk\"\n}"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_0cd8f50c5d614f08b5f935662365b77b"
+        }],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644259427825,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_ca7bbd5221734d3a9f7b638ba65b138e",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644343590546,
+        "created": 1644259351531,
+        "name": "WG join",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270454.9375,
+        "_type": "request_group"
+    }, {
+        "_id": "req_595ccd22bb0d4e10bc4905b15af751be",
+        "parentId": "fld_6a98d1d06e79443a97cd1a2868b4f9b7",
+        "modified": 1644487202592,
+        "created": 1644265683448,
+        "url": "http://localhost:{{ _.app_port }}/api/wgs/1/dashboard",
+        "name": "Get WG dashboard ",
+        "description": "",
+        "method": "GET",
+        "body": {},
+        "parameters": [],
+        "headers": [],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.ziad_token }}"
+        },
+        "metaSortKey": -1644265683449,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_6a98d1d06e79443a97cd1a2868b4f9b7",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644349770001,
+        "created": 1644265664486,
+        "name": "WG dashboard ",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270454.5469,
+        "_type": "request_group"
+    }, {
+        "_id": "req_1f223781f38c424f9b542d9f6a4cbbd3",
+        "parentId": "fld_2c740862534343db90144f9cdca5664f",
+        "modified": 1644832804676,
+        "created": 1644349801236,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/expenses/purchases",
+        "name": "Add purchase",
+        "description": "",
+        "method": "POST",
+        "body": {
+            "mimeType": "multipart/form-data",
+            "params": [{
+                "id": "pair_4f3a5ca93eac47e2b794a8d790e5fb74",
+                "name": "wgID",
+                "value": "1",
+                "description": ""
+            }, {
+                "id": "pair_c6b7b087375e4b808a3f45a89fe0abdc",
+                "name": "date",
+                "value": "'2022-02-10'",
+                "description": ""
+            }, {
+                "id": "pair_34c9ff6d322e44dba542c779793a032a",
+                "name": "receiptImage",
+                "value": "",
+                "description": "",
+                "type": "file",
+                "fileName": "/home/ziad/Downloads/cat.jpg"
+            }, {
+                "id": "pair_17d80b9ba68b4286b4b9f948d0f5264d",
+                "name": "purchasedItems",
+                "value": "{\n\t\"productName\": \"Product 1\",\n\t\"productPrice\": 5.4,\n\t\"note\": null\n}",
+                "description": "",
+                "type": "text",
+                "multiline": "application/json"
+            }, {
+                "id": "pair_bb738de05cd44bb58f957a6f140ba3cf",
+                "name": "purchasedItems",
+                "value": "{\n\t\"productName\": \"Product 2\",\n\t\"productPrice\": 37,\n\t\"note\": \"very expensive, we need to find a better deal\"\n}",
+                "description": "",
+                "type": "text",
+                "multiline": "application/json"
+            }]
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "multipart/form-data",
+            "id": "pair_e4518301ff6e4aa688230a53027d33ff"
+        }],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644349801236,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_2c740862534343db90144f9cdca5664f",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644479224619,
+        "created": 1644349733231,
+        "name": "Add Expense View",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270454.4492,
+        "_type": "request_group"
+    }, {
+        "_id": "req_ffdbe853f7054b94b36cc6eef19ade8e",
+        "parentId": "fld_7b42821c62824e44bc5907233efdf027",
+        "modified": 1644484336940,
+        "created": 1644479192075,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/expenses/dashboard",
+        "name": "Get expenses dasboard in a month",
+        "description": "",
+        "method": "GET",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"wgID\": 1,\n\t\"month\": \"2\",\n\t\"year\": \"2022\"\n\t\n}"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_d802c5897cb046ce9698c9376e81c249"
+        }],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644479192075,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_7b42821c62824e44bc5907233efdf027",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644484270592,
+        "created": 1644479135004,
+        "name": "Get Expenses View",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270454.4248,
+        "_type": "request_group"
+    }, {
+        "_id": "req_5ed3cb88c83e4814872b65c56e37973d",
+        "parentId": "fld_93334f9e86b74959baf0eeea249ef297",
+        "modified": 1645258679278,
+        "created": 1644833038715,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/expenses/settle",
+        "name": "Settle expenses",
+        "description": "",
+        "method": "PATCH",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"wgID\": 1,\n\t\"month\": 2,\n\t\"year\": 2022\n\t\n}"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_7cd4e242c0884257b68c5b40b2da9533"
+        }],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644833038715,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_93334f9e86b74959baf0eeea249ef297",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644943719898,
+        "created": 1644832817243,
+        "name": "Settlement View",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270454.4219,
+        "_type": "request_group"
+    }, {
+        "_id": "req_6ede0fa37d9e478dbef6b5ac2f661255",
+        "parentId": "fld_b692c738a1004de7b625585d323fd852",
+        "modified": 1645258458234,
+        "created": 1644484289412,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/tasks",
+        "name": "add new Task",
+        "description": "",
+        "method": "POST",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\t\n\t\"wgID\": 1,\n\t\"assignedUserID\": 1,\n\t\"title\": \"Pay the radio tax\",\n\t\"deadline\": \"2022-03-15\"\n}"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_ad5864a689b846ee8ac0fbb96e40a204"
+        }],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644976504500,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_b692c738a1004de7b625585d323fd852",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644976712969,
+        "created": 1644976494992,
+        "name": "WG Tasks View",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644174270454.4204,
+        "_type": "request_group"
+    }, {
+        "_id": "req_9ac82cf7b79c4dc084777c8aa99ac278",
+        "parentId": "fld_b692c738a1004de7b625585d323fd852",
+        "modified": 1645258512131,
+        "created": 1644976504450,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/tasks",
+        "name": "get all wg tasks",
+        "description": "",
+        "method": "GET",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"wgID\": 1\n}"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_fdabca03f19b43b9bffee69b973567d0"
+        }],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644976504450,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "req_13036b0d28de4ffe9c2be0d4727162ab",
+        "parentId": "fld_b692c738a1004de7b625585d323fd852",
+        "modified": 1645258532007,
+        "created": 1644980638107,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/tasks/2/done",
+        "name": "mark task as done",
+        "description": "",
+        "method": "PATCH",
+        "body": {},
+        "parameters": [],
+        "headers": [],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644976504400,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "req_8a301cdaf201471e8840a2ba1910acc7",
+        "parentId": "fld_a9d425cd279047d3b2d48e83206ef12b",
+        "modified": 1645258372756,
+        "created": 1644998869651,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/announcements",
+        "name": "add announcement",
+        "description": "",
+        "method": "POST",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"wgID\": 1,\n\t\"message\": \"let's finish this project!\"\n}"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_f7fb47d33ba24d1a92cb7ffc0dae548c"
+        }],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644998869651,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "fld_a9d425cd279047d3b2d48e83206ef12b",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1644998860880,
+        "created": 1644998860880,
+        "name": "Announcements",
+        "description": "",
+        "environment": {},
+        "environmentPropertyOrder": null,
+        "metaSortKey": -1644998860880,
+        "_type": "request_group"
+    }, {
+        "_id": "req_e9ba865a7cba451aa467458fb3c33729",
+        "parentId": "fld_a9d425cd279047d3b2d48e83206ef12b",
+        "modified": 1645258183744,
+        "created": 1644999070790,
+        "url": "http://{{ _.server_address }}:{{ _.app_port }}/api/announcements",
+        "name": "get announcements",
+        "description": "",
+        "method": "GET",
+        "body": {
+            "mimeType": "application/json",
+            "text": "{\n\t\"wgID\": 1\n}"
+        },
+        "parameters": [],
+        "headers": [{
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "pair_557bde4343664f87a6edbebd1d6b0205"
+        }],
+        "authentication": {
+            "type": "bearer",
+            "token": "{{ _.token }}"
+        },
+        "metaSortKey": -1644999070790,
+        "isPrivate": false,
+        "settingStoreCookies": true,
+        "settingSendCookies": true,
+        "settingDisableRenderRequestBody": false,
+        "settingEncodeUrl": true,
+        "settingRebuildPath": true,
+        "settingFollowRedirects": "global",
+        "_type": "request"
+    }, {
+        "_id": "env_a98c627925204ef031a93fc0674a42c91f5180a8",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1643535781928,
+        "created": 1643535770329,
+        "name": "Base Environment",
+        "data": {},
+        "dataPropertyOrder": {},
+        "color": null,
+        "isPrivate": false,
+        "metaSortKey": 1643535770329,
+        "_type": "environment"
+    }, {
+        "_id": "jar_a98c627925204ef031a93fc0674a42c91f5180a8",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1643535770332,
+        "created": 1643535770332,
+        "name": "Default Jar",
+        "cookies": [],
+        "_type": "cookie_jar"
+    }, {
+        "_id": "spc_a4e823649bbd4cadbf5a029cde824f16",
+        "parentId": "wrk_e53f45bcede0456cb1ad578063e86805",
+        "modified": 1643535770325,
+        "created": 1643535770325,
+        "fileName": "Requests collection",
+        "contents": "",
+        "contentType": "yaml",
+        "_type": "api_spec"
+    }, {
+        "_id": "env_7e924fb345e045b486031d3217542caa",
+        "parentId": "env_a98c627925204ef031a93fc0674a42c91f5180a8",
+        "modified": 1644346312769,
+        "created": 1643535790084,
+        "name": "EasyWG",
+        "data": {
+            "server_address": "172.104.244.126",
+            "app_port": "3000",
+            "ziad_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ6aWFkQGVhc3l3Zy5jb20iLCJpYXQiOjE2NDQzNDYyODZ9.-xPqIJAPJsrPJg1Ur3drwrWts_UPCvI3vZY7l567odg"
+        },
+        "dataPropertyOrder": {
+            "&": ["server_address", "app_port", "ziad_token"]
+        },
+        "color": null,
+        "isPrivate": false,
+        "metaSortKey": 1643535790084,
+        "_type": "environment"
+    }, {
+        "_id": "env_a07f7ebe980d4691ac314f928c2a2bd3",
+        "parentId": "env_a98c627925204ef031a93fc0674a42c91f5180a8",
+        "modified": 1644444455701,
+        "created": 1643648082939,
+        "name": "Local EasyWG",
+        "data": {
+            "server_address": "localhost",
+            "app_port": "3000",
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ6aWFkQGVhc3l3Zy5jb20iLCJpYXQiOjE2NDQyNTk1NDB9.f8Ano51LQbUUBvvNvUEJfQ42mDNokME53OZhXCta-6w"
+        },
+        "dataPropertyOrder": {
+            "&": ["server_address", "app_port", "token"]
+        },
+        "color": null,
+        "isPrivate": false,
+        "metaSortKey": 1643648082939,
+        "_type": "environment"
+    }]
+}

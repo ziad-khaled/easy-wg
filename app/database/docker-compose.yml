@@ -3,7 +3,7 @@ services:
   main_db:
     image: mysql:8.0
     environment:
-      MYSQL_DATABASE: 'easy_wg_db_test'
+      MYSQL_DATABASE: 'easy_wg_db'
       MYSQL_USER: 'db_admin'
       MYSQL_PASSWORD: 'Barstool-Brilliant-Caucus-Trousers-Buckwheat0-Village-Harddisk'
       MYSQL_ROOT_PASSWORD: 'Barstool-Brilliant-Caucus-Trousers-Buckwheat0-Village-Harddisk'
