@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, Dimensions } from 'react-native';
+var deviceWidth = Dimensions.get('window').width; //full width
 
 class Settlement1 extends Component {
     state={
@@ -9,30 +10,22 @@ class Settlement1 extends Component {
     render() {
         return (
           <View style={styles.container}>
-            <Image 
-                    style={styles.logo}
-                    source={require('../../assets/logo.png')}>
-            </Image>
+            <View style={styles.header}>
+              <Text style={styles.headerTitle}>Hello, {this.state.userName}</Text>
+              <Text style={styles.title}>Total: € {this.state.totalSpending}</Text> 
+            </View>
 
-            <View style={styles.midContent}>
-              <Text style={styles.logo}>Hello, {this.state.userName}</Text>
-              <Text style={styles.title}>Total: € {this.state.totalSpending}</Text>  
-                    
-
+            <View style={styles.midContent}>             
               <Text style={styles.title}>Spending Summary</Text>         
-              <View style={styles.inputView} >
-                  <TextInput  
-                  style={styles.inputText}
-                  onChangeText={text => this.setState({password:text})}/>
-              </View>
+
               
-              <TouchableOpacity style={styles.textBtn}>
-                  <Text style={styles.btnText}>Settle Now</Text>
-              </TouchableOpacity>
+              
             </View>
 
             <View style={styles.footer}>
-                
+              <TouchableOpacity>
+                <Text style={styles.btnText}>Settle Now</Text>
+              </TouchableOpacity>
             </View>                
           </View>
         );
@@ -42,57 +35,52 @@ class Settlement1 extends Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+      flexDirection: 'column',
       backgroundColor: '#2B2B2B',
       alignItems: 'center',
       justifyContent: 'center',
     },
-    logo:{
-      fontWeight:"bold",
-      fontSize:30,
+    header:{
+      flex: 2,
+      flexDirection: 'row',
       color:"#B2ABAB",
-      marginBottom:30,
+      justifyContent: 'space-around',
+      alignItems: 'center'
     },
+    headerTitle: {
+      fontWeight: "bold",
+      fontSize: 25,
+      color: "#B2ABAB",
+    },
+
+    midContent: {
+      flex: 4,
+      flexDirection: 'column',
+      justifyContent: "center",
+      alignItems: "center",
+      width: deviceWidth,
+    },  
     title:{
         fontWeight:"bold",
         fontSize:18,
         color:"#B2ABAB",
       },
-    textBtn:{
-        width:"30%",
-        backgroundColor:"#2B2B2B",
-        borderRadius:25,
-        borderColor: "#B2ABAB",
-        borderWidth: 2,
-        height:50,
-        alignItems:"center",
-        justifyContent:"center",
-        marginTop:15,
-        marginBottom:10
-      },
-      inputView:{
-        width:"60%",
-        backgroundColor:"#2B2B2B",
-        borderRadius:25,
-        borderColor: "#B2ABAB",
-        borderWidth: 2,
-        height:50,
-        marginBottom:20,
-        justifyContent:"center",
-        padding:20
-      },
 
-    inputText:{
-        height:50,
-        color:"#B2ABAB",
-        textAlign: 'center'
-      },
+
+    footer: {
+      flex: 2,
+      alignItems: "center",
+      justifyContent: "center",
+    },
     btnText:{
       color:"#B2ABAB",    
+      fontWeight:"bold",
+      fontSize:15,
+      borderRadius: 20,
+      borderColor: "#B2ABAB",
+      borderWidth: 2,
+      padding: 15
     }, 
-    registrationText:{
-        color:"white",      
-        marginTop: 40
-    }
   });
 
 export default Settlement1;

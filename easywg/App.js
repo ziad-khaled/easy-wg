@@ -26,7 +26,7 @@ export default class App extends React.Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator>   
+        <Stack.Navigator>           
           
           <Stack.Screen name='Home' component={Login} />  
           <Stack.Screen name='Registration' component={Registration} />        
@@ -39,17 +39,17 @@ export default class App extends React.Component {
 
           <Stack.Screen name='Dashboard' component={Dashboard} /> 
 
-          <Stack.Screen name='ExpenseMain' component={ExpenseMain} />
           <Stack.Screen name='AddExpense' component={AddExpense} />
+          <Stack.Screen name='ExpenseMain' component={ExpenseMain} />
 
           <Stack.Screen name='CleaningSchedule' component={CleaningSchedule} />
           <Stack.Screen name='CleaningTask' component={CleaningTask} />
 
           <Stack.Screen name='Announcement ' component={Announcement} />
           <Stack.Screen name='NewAnnoucement' component={NewAnnoucement} />
-
+          
+          <Stack.Screen name='Settlement2' component={Settlement2} /> 
           <Stack.Screen name='Settlement1' component={Settlement1} />
-          <Stack.Screen name='Settlement2' component={Settlement2} />
         </Stack.Navigator>  
       </NavigationContainer>     
     );

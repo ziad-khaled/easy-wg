@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, Dimensions } from 'react-native';
+var deviceWidth = Dimensions.get('window').width; //full width
 
 class Settlement2 extends Component {
     state={
@@ -10,32 +11,33 @@ class Settlement2 extends Component {
     render() {
         return (
           <View style={styles.container}>
-            <Image 
-                    style={styles.logo}
-                    source={require('../../assets/logo.png')}>
-            </Image>
+            <View style={styles.header}>
+              <Text style={styles.headerTitle}>Hello, {this.state.userName}</Text>
+              <Text style={styles.title}>Total: € {this.state.totalSpending}</Text> 
+            </View>
 
 
-            <View style={styles.midContent}>
-              <Text style={styles.logo}>Hello, {this.state.userName}</Text>
-                <Text style={styles.title}>Total: € {this.state.totalSpending}</Text>  
+            <View style={styles.midContent}> 
+              <View style={styles.midContentText}>
+                <Text style={styles.title1}>The average cost was €{this.state.avgCost}</Text>
+                <Text style={styles.title2}>Updated balances are</Text>   
+              </View>   
                       
-                <Text style={styles.title}>The average cost was €{this.state.avgCost}</Text>
-                <Text style={styles.title}>Updated balances are</Text>         
-                <View style={styles.inputView} >
-                    <TextInput  
-                    style={styles.inputText}
-                    onChangeText={text => this.setState({password:text})}/>
-                </View>
+              <View style={styles.summaryView} >
+                  <TextInput  
+                  style={styles.inputText}
+                  onChangeText={text => this.setState({password:text})}/>
+              </View>
 
-                <Text style={styles.title}>Note: After clicking on Settled button, all members balance will be set to €0</Text> 
-                <TouchableOpacity style={styles.textBtn}>
-                    <Text style={styles.btnText}>Settled</Text>
-                </TouchableOpacity>
+              <View style={styles.midContentNote}>
+                <Text style={styles.title}>Note: After clicking on Settled button, all members balance will be set to €0</Text>
+              </View> 
             </View>
 
             <View style={styles.footer}>
-                
+              <TouchableOpacity>
+                <Text style={styles.btnText}>Settled</Text>
+              </TouchableOpacity>
             </View>                
         </View>
         );
@@ -43,59 +45,80 @@ class Settlement2 extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#2B2B2B',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    logo:{
-      fontWeight:"bold",
-      fontSize:30,
-      color:"#B2ABAB",
-      marginBottom:30,
-    },
-    title:{
-        fontWeight:"bold",
-        fontSize:18,
-        color:"#B2ABAB",
-      },
-    textBtn:{
-        width:"30%",
-        backgroundColor:"#2B2B2B",
-        borderRadius:25,
-        borderColor: "#B2ABAB",
-        borderWidth: 2,
-        height:50,
-        alignItems:"center",
-        justifyContent:"center",
-        marginTop:15,
-        marginBottom:10
-      },
-      inputView:{
-        width:"60%",
-        backgroundColor:"#2B2B2B",
-        borderRadius:25,
-        borderColor: "#B2ABAB",
-        borderWidth: 2,
-        height:50,
-        marginBottom:20,
-        justifyContent:"center",
-        padding:20
-      },
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#2B2B2B',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  header:{
+    flex: 1.5,
+    flexDirection: 'row',
+    width: deviceWidth,
+    color:"#B2ABAB",
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+  headerTitle: {
+    fontWeight: "bold",
+    fontSize: 20,
+    color: "#B2ABAB",
+  },
+  title:{
+    fontWeight:"bold",
+    fontSize:16,
+    color:"#B2ABAB",
+  },
 
-    inputText:{
-        height:50,
-        color:"#B2ABAB",
-        textAlign: 'center'
-      },
-    btnText:{
-      color:"#B2ABAB",    
-    }, 
-    registrationText:{
-        color:"white",      
-        marginTop: 40
-    }
-  });
+  midContent: {
+    flex: 4,
+    flexDirection: 'column',
+    justifyContent: "center",
+    alignItems: "center",
+    width: deviceWidth,
+  },  
+  summaryView:{
+    flex:2.5
+  },
+  midContentText:{
+    flex: 1,
+    justifyContent: 'flex-start',
+    width: deviceWidth * .90,
+  },
+  title1:{
+    fontWeight:"bold",
+    fontSize:16,
+    color:"#B2ABAB",
+    marginBottom: 15
+  },
+  title2:{
+    fontWeight:"bold",
+    fontSize:16,
+    color:"#B2ABAB",
+  },
+  midContentNote:{
+    flex: .5 ,
+    justifyContent: 'flex-start',
+    width: deviceWidth * .90,
+  },
+
+
+
+  footer: {
+    flex: 1.5,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  btnText:{
+    color:"#B2ABAB",    
+    fontWeight:"bold",
+    fontSize:15,
+    borderRadius: 20,
+    borderColor: "#B2ABAB",
+    borderWidth: 2,
+    padding: 15
+  }, 
+});
 
 export default Settlement2;
